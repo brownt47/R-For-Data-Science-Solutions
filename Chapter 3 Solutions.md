@@ -53,7 +53,7 @@ Run the following code:  >ggplot(data = mpg)+geom_point(mapping = aes (x= hwy, y
    
 # 3.3.1 Exercises
 
-**Problem 1: What’s gone wrong with this code? Why are the points not blue?
+**Problem 1: What’s gone wrong with this code? Why are the points not blue?**
 
 >ggplot(data = mpg) + 
 >  geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
@@ -94,7 +94,7 @@ vs
 
 as you repeat the above for shape and size, you will get some warning messages and some will not plot at all.
 
-**Problem 4: What happens if you map the same variable to multiple aesthetics?
+**Problem 4: What happens if you map the same variable to multiple aesthetics?**
 
 this will simply have all the aesthetics reacting to the same variable.  This could be a nice way to add extra emphasis to the variables importance in the data.  This would be more of a presentation strategy to have the color and size of the points change as the value of a variable also changes.  draw more attention to patterns in the data
 
@@ -105,7 +105,7 @@ example:
 
 this will create a scatterplot that gives each class it's own color and shape (up to five shapes due to limit on number of categories shape is set to as default)
 
-**Problem 5: What does the stroke aesthetic do? What shapes does it work with? (Hint: use ?geom_point)
+**Problem 5: What does the stroke aesthetic do? What shapes does it work with? (Hint: use ?geom_point)**
 
 stroke correspondes to the width of lines when drawing shapes. Solid shapes like 15-20 will no be impacted by stroke.  the hollow shapes and those with a border will.
 
