@@ -94,6 +94,33 @@ vs
 
 as you repeat the above for shape and size, you will get some warning messages and some will not plot at all.
 
+** Problem 4: What happens if you map the same variable to multiple aesthetics?
+
+this will simply have all the aesthetics reacting to the same variable.  This could be a nice way to add extra emphasis to the variables importance in the data.  This would be more of a presentation strategy to have the color and size of the points change as the value of a variable also changes.  draw more attention to patterns in the data
+
+example:
+
+>ggplot(data = mpg) + 
+>    geom_point(mapping = aes(x = displ, y = hwy, shape = class,color = class))
+
+this will create a scatterplot that gives each class it's own color and shape (up to five shapes due to limit on number of categories shape is set to as default)
+
+** Problem 5: What does the stroke aesthetic do? What shapes does it work with? (Hint: use ?geom_point)
+
+stroke correspondes to the width of lines when drawing shapes. Solid shapes like 15-20 will no be impacted by stroke.  the hollow shapes and those with a border will.
+
+running the example below you will see the star shapes become almost circles as you move left to right whereas the triangles do not change size
+
+>ggplot(data = mpg) + 
+>    geom_point(mapping = aes(x = displ, y = hwy, shape=class, stroke=displ, color=class))
 
 
+** Problem 6: What happens if you map an aesthetic to something other than a variable name, like aes(colour = displ < 5)? Note, you’ll also need to specify x and y. **
+
+keeping with the same x = displ, y = hwy and adding color = displ < 5 inside the aes() function, the legend will give us a clue as to what is happening
+
+>ggplot(data = mpg) + 
+>    geom_point(mapping = aes(x = displ, y = hwy, color=displ<5))
+
+we see the points are plotted using two colors and the legend tells us which vehicles have a displ less than 5 and which have displ of 5 or greater.  the statement displ < 5 is a logical statement with two outcomes TRUE and FALSE.  Not limiting the color palette to those vehicles with a displ less than 5, which one may have initially anticipated.
 
