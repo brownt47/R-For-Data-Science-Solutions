@@ -22,7 +22,7 @@
  I always used the mnemonic divice of RC-Cola for remembering rows x columns is how a matrix's dimensions are listed.
  
  
-** Problem 3: What does the drv variable describe? Read the help for ?mpg to find out.**
+**Problem 3: What does the drv variable describe? Read the help for ?mpg to find out.**
 
 Entering ?mpg into the command line will open a description of the data frame in your help window in R-Studio.  
 This provides a description of the data set and each of the variables/categories within it.
