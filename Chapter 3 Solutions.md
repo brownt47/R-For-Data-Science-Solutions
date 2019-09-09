@@ -1,12 +1,15 @@
 ##Solutions for 3.2.4##
+
 **Problem 1: Run ggplot(data = mpg). What do you see?**
+
      After running this command, we see an empty graph, much like the text mentioned
      
 **Problem 2: How many rows are in mpg? How many columns?**
+
      Simply typing "mpg" into the command line will display some basic information about the data frame:
      
      > mpg
-     # A tibble: 234 x 11   
+     A tibble: 234 x 11   
    manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class  
    <chr>        <chr>      <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr>  
  1 audi         a4           1.8  1999     4 auto(l5)   f        18    29 p     compact
