@@ -51,11 +51,12 @@ Run the following code:  >ggplot(data = mpg)+geom_point(mapping = aes (x= hwy, y
    the jitter geom will add some noise to the data so all the points do not just stack on top of each other.
    
    
-##3.3.1 Exercises##
+# 3.3.1 Exercises
+
 **Problem 1: What’s gone wrong with this code? Why are the points not blue?
 
 >ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
+>  geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
 
 What happened here is due to "color" being set inside the aesthetic then it is going to look in the data set for a variable called "blue" then use the properties (range, data type. etc.) to paint the colors with.  Since there is no variable labelled "blue" in the data set, the aes layer just defaults to red.  If we place it outside the aes() then this will instruct the plot to now set the color of all the dots to be painted blue.  Hadley discusses this here in more detail: https://nceas.github.io/oss-lessons/dataviz-and-interactive-tools/module-1-ggplot2.html
 
@@ -65,14 +66,14 @@ inside the aes() call will use the actual data to select colors, sizes, shapes a
 
 if you run ?mpg you can read the description of each variable and may be able to identify categorical variables from the context.  if you run mpg then at the top of each column it will tell you the data type the variable stores its data values as.  If you are familar with some basic programming, these should look like your primitve data types:  int = integers (discrete), dbl = double (continuous) chr = character (categorical)
 
-> mpg
-# A tibble: 234 x 11
-   manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class  
-   <chr>        <chr>      <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr>  
- 1 audi         a4           1.8  1999     4 auto(l5)   f        18    29 p     compact
- 2 audi         a4           1.8  1999     4 manual(m5) f        21    29 p     compact
- 3 audi         a4           2    2008     4 manual(m6) f        20    31 p     compact
-   ...
+>mpg
+>A tibble: 234 x 11
+>   manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class  
+>   <chr>     >   <chr>      <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr>  
+> 1 audi         a4           1.8  1999     4 auto(l5)   f        18    29 p     compact
+> 2 audi         a4           1.8  1999     4 manual(m5) f        21    29 p     compact
+> 3 audi         a4           2    2008     4 manual(m6) f        20    31 p     compact
+>   ...
 
 
 **Problem 3: Map a continuous variable to color, size, and shape. How do these aesthetics behave differently for categorical vs. continuous variables?**
@@ -84,12 +85,12 @@ keeping the same x and y, try the following to see how cont vs categorical acts 
 Use displ for the continuous and class for categorical
 
 >ggplot(data = mpg) + 
-    geom_point(mapping = aes(x = displ, y = hwy, color = displ))
+>    geom_point(mapping = aes(x = displ, y = hwy, color = displ))
     
 vs
 
-ggplot(data = mpg) + 
-    geom_point(mapping = aes(x = displ, y = hwy, color = class))
+>ggplot(data = mpg) + 
+>    geom_point(mapping = aes(x = displ, y = hwy, color = class))
 
 as you repeat the above for shape and size, you will get some warning messages and some will not plot at all.
 
