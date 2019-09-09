@@ -94,7 +94,7 @@ vs
 
 as you repeat the above for shape and size, you will get some warning messages and some will not plot at all.
 
-** Problem 4: What happens if you map the same variable to multiple aesthetics?
+**Problem 4: What happens if you map the same variable to multiple aesthetics?
 
 this will simply have all the aesthetics reacting to the same variable.  This could be a nice way to add extra emphasis to the variables importance in the data.  This would be more of a presentation strategy to have the color and size of the points change as the value of a variable also changes.  draw more attention to patterns in the data
 
