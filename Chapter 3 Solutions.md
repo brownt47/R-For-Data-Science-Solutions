@@ -10,9 +10,9 @@
      
      > mpg
      A tibble: 234 x 11   
-   manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class  
+   manufacturer| model  |    displ | year |  cyl| trans|      drv|     cty|   hwy| fl|    class|  
    
- 1 audi         a4           1.8  1999     4 auto(l5)   f        18    29 p     compact
+ 1 |audi      |   a4      |     1.8 | 1999  |   4| auto(l5)|   f   |     18   | 29 |p   |  compact
  2 audi         a4           1.8  1999     4 manual(m5) f        21    29 p     compact
  3 audi         a4           2    2008     4 manual(m6) f        20    31 p     compact
  4 audi         a4           2    2008     4 auto(av)   f        21    30 p     compact
