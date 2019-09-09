@@ -38,11 +38,14 @@ the geom_point() will create scatterplots.
 
 Run the following code:  >ggplot(data = mpg)+geom_point(mapping = aes (x= hwy, y=cyl))
    Upon initial viewing of the graph we see that there is a compact vehicle that has a four cylinder engine and one that has a six-cylinder engine.
+   
    What the graph is not showing is how many compact vehicles have 4 and 6-cylinder engines.  
    if you try using a "jitter" scatterplot, it will better reveal how many vehicles have particular engine types:
    
    Try:
-   >ggplot(data = mpg)+geom_jitter(mapping = aes (x= class, y=cyl))   the jitter geom will add some noise to the data so all the points do not just stack on top of each other.
+   >ggplot(data = mpg)+geom_jitter(mapping = aes (x= class, y=cyl))   
+   
+   the jitter geom will add some noise to the data so all the points do not just stack on top of each other.
    
    
 
