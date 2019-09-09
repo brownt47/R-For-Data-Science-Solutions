@@ -1,4 +1,4 @@
-##Solutions for 3.2.4##
+## Solutions for 3.2.4 
 
 **Problem 1: Run ggplot(data = mpg). What do you see?**
 
