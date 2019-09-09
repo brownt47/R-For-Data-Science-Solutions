@@ -1,4 +1,4 @@
-#@Solutions for 3.2.4
+##Solutions for 3.2.4
 **Problem 1: Run ggplot(data = mpg). What do you see?**
      After running this command, we see an empty graph, much like the text mentioned
      
@@ -42,7 +42,10 @@ Run the following code:  >ggplot(data = mpg)+geom_point(mapping = aes (x= hwy, y
    if you try using a "jitter" scatterplot, it will better reveal how many vehicles have particular engine types:
    
    Try:
-   >ggplot(data = mpg)+geom_jitter(mapping = aes (x= class, y=cyl))
+   >ggplot(data = mpg)+geom_jitter(mapping = aes (x= class, y=cyl))   the jitter geom will add some noise to the data so all the points do not just stack on top of each other.
+   
+   
+
    
 
 
