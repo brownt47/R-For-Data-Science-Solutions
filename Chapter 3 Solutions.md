@@ -11,7 +11,7 @@
      > mpg
      A tibble: 234 x 11   
    manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class  
-   <chr>        <chr>      <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr>  
+   
  1 audi         a4           1.8  1999     4 auto(l5)   f        18    29 p     compact
  2 audi         a4           1.8  1999     4 manual(m5) f        21    29 p     compact
  3 audi         a4           2    2008     4 manual(m6) f        20    31 p     compact
@@ -80,7 +80,7 @@ if you run ?mpg you can read the description of each variable and may be able to
 
 using knowledge gained from the previous problem we can see that the variable displ is continuous (displ = engine displacement.  it involves how much fuel an engine is using to generate power if you were curious.  In essence a volume measurement)
 
-keeping the same x and y, try the following to see how cont vs categorical acts on aesthetics.  And since we want the color, shape and size to react to the data, we place those statements inside the aes() function
+keeping the same x and y, try the following to see how continuous vs categorical acts on aesthetics.  And since we want the color, shape and size to react to the data, we place those statements inside the aes() function
 
 Use displ for the continuous and class for categorical
 
@@ -105,7 +105,7 @@ example:
 
 this will create a scatterplot that gives each class it's own color and shape (up to five shapes due to limit on number of categories shape is set to as default)
 
-** Problem 5: What does the stroke aesthetic do? What shapes does it work with? (Hint: use ?geom_point)
+**Problem 5: What does the stroke aesthetic do? What shapes does it work with? (Hint: use ?geom_point)
 
 stroke correspondes to the width of lines when drawing shapes. Solid shapes like 15-20 will no be impacted by stroke.  the hollow shapes and those with a border will.
 
@@ -115,7 +115,7 @@ running the example below you will see the star shapes become almost circles as 
 >    geom_point(mapping = aes(x = displ, y = hwy, shape=class, stroke=displ, color=class))
 
 
-** Problem 6: What happens if you map an aesthetic to something other than a variable name, like aes(colour = displ < 5)? Note, you’ll also need to specify x and y. **
+**Problem 6: What happens if you map an aesthetic to something other than a variable name, like aes(colour = displ < 5)? Note, you’ll also need to specify x and y. **
 
 keeping with the same x = displ, y = hwy and adding color = displ < 5 inside the aes() function, the legend will give us a clue as to what is happening
 
