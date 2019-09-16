@@ -7,16 +7,22 @@ After running this command, we see an empty graph, much like the text mentioned
 ![image](/images/Exercise3.2.4.1.png)
      
      
-     
+    
+    
+    
 **Problem 2: How many rows are in mpg? How many columns?**
 
 Simply typing *"mpg"* into the command line will display some basic information about the data frame:
      
 We see then *mpg* is a tibble data frame with 234 rows and 11 columns.  
 
-I always used the mnemonic divice of RC-Cola for remembering rows x columns is how a matrix's dimensions are listed.
+*I always used the mnemonic divice of RC-Cola for remembering rows x columns is how a matrix's dimensions are listed.*
  
 ![image](/images/Exercise3.2.4.2.png)
+ 
+ 
+ 
+ 
  
 **Problem 3: What does the *drv* variable describe? Read the help for *?mpg* to find out.**
 
@@ -28,7 +34,10 @@ scrolling down the list of variables we see that *drv* stands for the drive trai
              f = front-wheel drive, r = rear wheel drive, 4 = 4wd
              
 ![image](/images/Exercise3.2.4.3.png)
-             
+     
+     
+     
+     
              
 **Problem 4: Make a scatterplot of hwy vs cyl**
 
@@ -43,6 +52,10 @@ Which looks better? Presentation is also a part of creating graphs.
 >ggplot(data = mpg)+geom_point(mapping = aes (x= hwy, y=cyl))
 
 ![image](/images/Exercise3.2.4.4b.png)
+
+
+
+
 
 **Problem 5: What happens if you make a scatterplot of *class* vs *drv*? Why is the plot not useful?**
 
