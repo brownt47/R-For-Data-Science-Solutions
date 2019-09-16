@@ -36,11 +36,11 @@ the geom_point() will create scatterplots.  Here are two with swapping the choic
 
 >ggplot(data = mpg)+geom_point(mapping = aes (x= hwy, y=cyl))
 
-![image](/images/Exercise3.2.4.4a)
+![image](/images/Exercise3.2.4.4a.png)
 
 >ggplot(data = mpg)+geom_point(mapping = aes (x= cyl, y=hwy))
 
-![image](/images/Exercise3.2.4.4b)
+![image](/images/Exercise3.2.4.4b.png)
 
 **Problem 5: What happens if you make a scatterplot of class vs drv? Why is the plot not useful?**
 
@@ -48,7 +48,7 @@ Run the following code:  >ggplot(data = mpg)+geom_point(mapping = aes (x= class,
    Upon initial viewing of the graph we see that there is a compact vehicle that has a four cylinder engine and one that has a six-cylinder engine.
    
    
-![image](/images/Exercise3.2.4.5a)
+![image](/images/Exercise3.2.4.5a.png)
    
    What the graph is not showing is how many compact vehicles have 4 and 6-cylinder engines.  
    if you try using a "jitter" scatterplot, it will better reveal how many vehicles have particular engine types:
@@ -59,4 +59,4 @@ Run the following code:  >ggplot(data = mpg)+geom_point(mapping = aes (x= class,
    the jitter geom will add some noise to the data so all the points do not just stack on top of each other.
    
    
-![image](/images/Exercise3.2.4.5b)
+![image](/images/Exercise3.2.4.5b.png)
