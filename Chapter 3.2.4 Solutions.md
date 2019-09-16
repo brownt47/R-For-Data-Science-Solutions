@@ -39,7 +39,10 @@ scrolling down the list of variables we see that *drv* stands for the drive trai
 ![image](/images/Exercise3.2.4.3.png)
      
      
-     
+&nbsp;   
+&nbsp;   
+&nbsp;   
+ 
      
              
 **Problem 4: Make a scatterplot of hwy vs cyl**
@@ -57,6 +60,9 @@ Which looks better? Presentation is also a part of creating graphs.
 ![image](/images/Exercise3.2.4.4b.png)
 
 
+&nbsp;   
+&nbsp;   
+&nbsp;   
 
 
 
@@ -82,3 +88,6 @@ Upon initial viewing of the graph we see that there is a compact vehicle that ha
    
    
 ![image](/images/Exercise3.2.4.5b.png)
+&nbsp;   
+&nbsp;   
+&nbsp;   
