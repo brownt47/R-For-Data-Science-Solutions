@@ -48,7 +48,7 @@ Run the following code:
 
 >ggplot(data = mpg)+geom_point(mapping = aes (x= class, y=cyl))
 
-Upon initial viewing of the graph we see that there is a compact vehicle that has a four cylinder engine and one that has a six-cylinder engine.
+Upon initial viewing of the graph we see that there is a compact vehicle that has a four-cylinder engine and a minivan that has a four-cylinder engine.
    
    
 ![image](/images/Exercise3.2.4.5a.png)
@@ -59,7 +59,7 @@ Upon initial viewing of the graph we see that there is a compact vehicle that ha
    Try:
    >ggplot(data = mpg)+geom_jitter(mapping = aes (x= class, y=cyl))   
    
-   the jitter geom will add some noise to the data so all the points do not just stack on top of each other.  Now we can see there is one 4-cyl minivan and dozens of 4-cyl compact vehicles.
+   the jitter geom will add some noise to the data so all the points do not just stack on top of each other.  Now we can see there is only one four-cylinder minivan and dozens of four-cylinder compact vehicles.
    
    
 ![image](/images/Exercise3.2.4.5b.png)
