@@ -5,11 +5,11 @@
 After running this command, we see an empty graph, much like the text mentioned
      
 ![image](/images/Exercise3.2.4.1.png)
-     
-      
-     
-     
-     
+  
+&nbsp;   
+&nbsp;   
+&nbsp;   
+   
 **Problem 2: How many rows are in mpg? How many columns?**
 
 Simply typing *"mpg"* into the command line will display some basic information about the data frame:
@@ -20,6 +20,9 @@ We see then *mpg* is a tibble data frame with 234 rows and 11 columns.
  
 ![image](/images/Exercise3.2.4.2.png)
   
+&nbsp;   
+&nbsp;   
+&nbsp;   
   
    
      
