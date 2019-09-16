@@ -8,10 +8,12 @@ I am creating a set of solutions that only rely on the techniques and content pr
 
 Chapter 3 Solutions
 
-[Chapter 3.2.4 Solutions](Chapter 3.2.4 Solutions.md)
+[Chapter 3.2.4 Solutions](Chapter 3.2.4 Solutions.md)  
 &nbsp;
 
-[Chapter 3.2.4 Solutions](Chapter 3.3.1 Solutions.md)
+[Chapter 3.2.4 Solutions](Chapter 3.3.1 Solutions.md)  
 &nbsp;
-[Chapter 3.2.4 Solutions](Chapter 3.5.1 Solutions.md)
+
+[Chapter 3.2.4 Solutions](Chapter 3.5.1 Solutions.md)  
+
 
