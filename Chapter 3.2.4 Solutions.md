@@ -34,18 +34,21 @@ scrolling down the list of variables we see that drv stands for the drive train 
 
 the geom_point() will create scatterplots.  Here are two with swapping the choices of the x and y variables. Which looks better? Presentation is also a part of creating graphs.
 
->ggplot(data = mpg)+geom_point(mapping = aes (x= hwy, y=cyl))
+>ggplot(data = mpg)+geom_point(mapping = aes (x= cyl, y=hwy))
 
 ![image](/images/Exercise3.2.4.4a.png)
 
->ggplot(data = mpg)+geom_point(mapping = aes (x= cyl, y=hwy))
+>ggplot(data = mpg)+geom_point(mapping = aes (x= hwy, y=cyl))
 
 ![image](/images/Exercise3.2.4.4b.png)
 
 **Problem 5: What happens if you make a scatterplot of class vs drv? Why is the plot not useful?**
 
-Run the following code:  >ggplot(data = mpg)+geom_point(mapping = aes (x= class, y=cyl))
-   Upon initial viewing of the graph we see that there is a compact vehicle that has a four cylinder engine and one that has a six-cylinder engine.
+Run the following code:  
+
+>ggplot(data = mpg)+geom_point(mapping = aes (x= class, y=cyl))
+
+Upon initial viewing of the graph we see that there is a compact vehicle that has a four cylinder engine and one that has a six-cylinder engine.
    
    
 ![image](/images/Exercise3.2.4.5a.png)
@@ -56,7 +59,7 @@ Run the following code:  >ggplot(data = mpg)+geom_point(mapping = aes (x= class,
    Try:
    >ggplot(data = mpg)+geom_jitter(mapping = aes (x= class, y=cyl))   
    
-   the jitter geom will add some noise to the data so all the points do not just stack on top of each other.
+   the jitter geom will add some noise to the data so all the points do not just stack on top of each other.  Now we can see there is one 4-cyl minivan and dozens of 4-cyl compact vehicles.
    
    
 ![image](/images/Exercise3.2.4.5b.png)
