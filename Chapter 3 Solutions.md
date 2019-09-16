@@ -130,7 +130,7 @@ we see the points are plotted using two colors and the legend tells us which veh
 
 There is only one variable in the mpg dataset that is continuous, which is the displ category.  if we try to facet cut on that variable, R will create bins for the variable to make it act like a discrete variable.  Trying the code below we see that the bin size is around 0.2 and creates quite a few facets to the point that the facets just blur together to look like a standard x ~ y plot
 
-![Exercise 3.5.1.1](/images/Exercise 3-5-1-1.png)
+![image](/images/Exercise 3-5-1-1.png)
 
 > ggplot(data = mpg) + 
 >+     geom_point(mapping = aes(x = drv, y = hwy)) + 
