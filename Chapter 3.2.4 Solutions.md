@@ -13,6 +13,7 @@ After running this command, we see an empty graph, much like the text mentioned
 Simply typing *"mpg"* into the command line will display some basic information about the data frame:
      
 We see then *mpg* is a tibble data frame with 234 rows and 11 columns.  
+
 I always used the mnemonic divice of RC-Cola for remembering rows x columns is how a matrix's dimensions are listed.
  
 ![image](/images/Exercise3.2.4.2.png)
@@ -23,6 +24,7 @@ Entering *?mpg* into the command line will open a description of the data frame 
 This provides a description of the data set and each of the variables/categories within it.
 
 scrolling down the list of variables we see that *drv* stands for the drive train type a vehicle utilizes:
+             
              f = front-wheel drive, r = rear wheel drive, 4 = 4wd
              
 ![image](/images/Exercise3.2.4.3.png)
