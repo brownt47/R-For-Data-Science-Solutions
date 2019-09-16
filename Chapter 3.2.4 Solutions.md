@@ -6,10 +6,10 @@ After running this command, we see an empty graph, much like the text mentioned
      
 ![image](/images/Exercise3.2.4.1.png)
      
+      
      
-    
-    
-    
+     
+     
 **Problem 2: How many rows are in mpg? How many columns?**
 
 Simply typing *"mpg"* into the command line will display some basic information about the data frame:
@@ -19,11 +19,11 @@ We see then *mpg* is a tibble data frame with 234 rows and 11 columns.
 *I always used the mnemonic divice of RC-Cola for remembering rows x columns is how a matrix's dimensions are listed.*
  
 ![image](/images/Exercise3.2.4.2.png)
- 
- 
- 
- 
- 
+  
+  
+   
+     
+  
 **Problem 3: What does the *drv* variable describe? Read the help for *?mpg* to find out.**
 
 Entering *?mpg* into the command line will open a description of the data frame in your help window in R-Studio.  
