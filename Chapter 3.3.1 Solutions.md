@@ -19,15 +19,8 @@ inside the aes() call will use the actual data to select colors, sizes, shapes a
 
 if you run ?mpg you can read the description of each variable and may be able to identify categorical variables from the context.  if you run mpg then at the top of each column it will tell you the data type the variable stores its data values as.  If you are familar with some basic programming, these should look like your primitve data types:  int = integers (discrete), dbl = double (continuous) chr = character (categorical)
 
->mpg
->A tibble: 234 x 11
->   manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class  
->   <chr>     >   <chr>      <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr>  
-> 1 audi         a4           1.8  1999     4 auto(l5)   f        18    29 p     compact
-> 2 audi         a4           1.8  1999     4 manual(m5) f        21    29 p     compact
-> 3 audi         a4           2    2008     4 manual(m6) f        20    31 p     compact
->   ...
 
+![image](/images/Exercise3.3.1.2.png)
 
 **Problem 3: Map a continuous variable to color, size, and shape. How do these aesthetics behave differently for categorical vs. continuous variables?**
 
@@ -35,17 +28,37 @@ using knowledge gained from the previous problem we can see that the variable di
 
 keeping the same x and y, try the following to see how continuous vs categorical acts on aesthetics.  And since we want the color, shape and size to react to the data, we place those statements inside the aes() function
 
-Use displ for the continuous and class for categorical
+Use *displ* for the continuous and *class* for categorical
 
 >ggplot(data = mpg) + 
 >    geom_point(mapping = aes(x = displ, y = hwy, color = displ))
-    
+
+![image](/images/Exercise3.3.1.3a.png)
+
 vs
 
 >ggplot(data = mpg) + 
 >    geom_point(mapping = aes(x = displ, y = hwy, color = class))
 
+![image](/images/Exercise3.3.1.3b.png)
+
 as you repeat the above for shape and size, you will get some warning messages and some will not plot at all.
+
+![image](/images/Exercise3.3.1.3c.png)
+
+![image](/images/Exercise3.3.1.3d.png)
+
+![image](/images/Exercise3.3.1.3e.png)
+
+ggplot(data = mpg) + 
++         geom_point(mapping = aes(x = displ, y = hwy, size = displ))
+
+
+![image](/images/Exercise3.3.1.3f.png)
+
+ggplot(data = mpg) + 
++         geom_point(mapping = aes(x = displ, y = hwy, shape = displ))
+![image](/images/Exercise3.3.1.3h.png)
 
 **Problem 4: What happens if you map the same variable to multiple aesthetics?**
 
