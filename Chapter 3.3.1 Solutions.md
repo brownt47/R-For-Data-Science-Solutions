@@ -1,4 +1,7 @@
 # 3.3.1 Exercises
+&nbsp;
+&nbsp;
+&nbsp;
 
 **Problem 1: What’s gone wrong with this code? Why are the points not blue?**
 
@@ -21,6 +24,9 @@ if you run ?mpg you can read the description of each variable and may be able to
 
 
 ![image](/images/Exercise3.3.1.2.png)
+&nbsp;
+&nbsp;
+&nbsp;
 
 **Problem 3: Map a continuous variable to color, size, and shape. How do these aesthetics behave differently for categorical vs. continuous variables?**
 
@@ -60,16 +66,37 @@ ggplot(data = mpg) +
 +         geom_point(mapping = aes(x = displ, y = hwy, shape = displ))
 ![image](/images/Exercise3.3.1.3h.png)
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 **Problem 4: What happens if you map the same variable to multiple aesthetics?**
 
-this will simply have all the aesthetics reacting to the same variable.  This could be a nice way to add extra emphasis to the variables importance in the data.  This would be more of a presentation strategy to have the color and size of the points change as the value of a variable also changes.  draw more attention to patterns in the data
+this will simply have all the aesthetics reacting to the same variable.  This could be a nice way to add extra emphasis to the variables importance in the data.  This would be more of a presentation strategy to have the color and size of the points change as the value of a variable also changes.  draw more attention to patterns in the data (and maybe help out anyone in the audience who may be colorblind)
 
 example:
 
 >ggplot(data = mpg) + 
->    geom_point(mapping = aes(x = displ, y = hwy, shape = class,color = class))
+>    geom_point(mapping = aes(x = displ, y = hwy, size = class,color = class))
+
 
 this will create a scatterplot that gives each class it's own color and shape (up to five shapes due to limit on number of categories shape is set to as default)
+
+
+![image](/images/Exercise3.3.1.4a.png)
+
+
+
+
+
+
+>ggplot(data = mpg) + 
+>    geom_point(mapping = aes(x = displ, y = hwy, shape = class,color = class))
+
+![image](/images/Exercise3.3.1.4b.png)
+&nbsp;
+&nbsp;
+&nbsp;
 
 **Problem 5: What does the stroke aesthetic do? What shapes does it work with? (Hint: use ?geom_point)**
 
@@ -80,6 +107,11 @@ running the example below you will see the star shapes become almost circles as 
 >ggplot(data = mpg) + 
 >    geom_point(mapping = aes(x = displ, y = hwy, shape=class, stroke=displ, color=class))
 
+![image](/images/Exercise3.3.1.5a.png)
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 **Problem 6: What happens if you map an aesthetic to something other than a variable name, like aes(colour = displ < 5)? Note, you’ll also need to specify x and y. **
 
