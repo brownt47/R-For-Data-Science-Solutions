@@ -7,7 +7,13 @@
 
 What happened here is due to "color" being set inside the aesthetic then it is going to look in the data set for a variable called "blue" then use the properties (range, data type. etc.) to paint the colors with.  Since there is no variable labelled "blue" in the data set, the aes layer just defaults to red.  If we place it outside the aes() then this will instruct the plot to now set the color of all the dots to be painted blue.  Hadley discusses this here in more detail: https://nceas.github.io/oss-lessons/dataviz-and-interactive-tools/module-1-ggplot2.html
 
-inside the aes() call will use the actual data to select colors, sizes, shapes appropriately.  outside the aes() will set the colors, sizes and shapes to whatever you declare.
+![image](/images/Exercise3.3.1.1a.png)
+
+inside the aes() call will use the actual data to select colors, sizes, shapes appropriately.  outside the aes() will set the colors, sizes and shapes to whatever you declare.  Here we put the color statement outside of the aes()
+
+>ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
+
+![image](/images/Exercise3.3.1.1b.png)
 
 **Problem 2: Which variables in mpg are categorical? Which variables are continuous? (Hint: type ?mpg to read the documentation for the dataset). How can you see this information when you run mpg?**
 
