@@ -57,6 +57,9 @@ Here is the plot from the beginning of the section:
 
 Here is a similar plot using the color aesthetic to represent class of vehicles:
 
+>ggplot(data = mpg) + 
+>  geom_point(mapping = aes(x = displ, y = hwy, color=class))  
+
 ![image](/images/Exercise3.5.1.4b.png)
 
 The faceting allows each class of vehicle to have its own plot where as the color aesthetic is comparing them all on one plot combined. Faceting may help see a pattern in individual classes whereas the color aesthetic may reveal patterns among classes compared to each other.  
