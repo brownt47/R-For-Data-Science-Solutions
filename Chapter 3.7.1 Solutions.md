@@ -61,7 +61,7 @@ If we use the `geom_bar` on this tribble, we will get five bars all with a heigh
 
  ![image](/images/Exercise3.7.1.2a.png)
  
- If we alter the tribble by adding another "Fair" row, we should see a change in the geom_bar plot now that there are two Fair entries.
+ If we alter the tribble by adding another "Fair" row, we should see a change in the `geom_bar` plot now that there are two "Fair" entries.
  
  `geom_bar` is simply counting the number of rows that have "Fair", "Good", etc. in the `cut` column.
  
