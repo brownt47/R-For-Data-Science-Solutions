@@ -28,7 +28,7 @@ the plot above shows the same thing, it just doesn't take into consideration the
 >  geom_point(mapping = aes(x = displ, y = hwy)) +
 >  facet_grid(drv ~ .)
 
-This will produce multiple plots comparing *displ* vs *hwy*8 grouped only by the type of *drv*.  The "." indicates to show all the grouped plots in a horizontal fashion.  swapping the location of the dot will have the facet cuts aligned vertically
+This will produce multiple plots comparing *displ* vs *hwy* grouped only by the type of *drv*.  The "." indicates to show all the grouped plots in a horizontal fashion.  swapping the location of the dot will have the facet cuts aligned vertically
 
 ![image](/images/Exercise3.5.1.3a.png)
 
@@ -36,6 +36,6 @@ This will produce multiple plots comparing *displ* vs *hwy*8 grouped only by the
 >  geom_point(mapping = aes(x = displ, y = hwy)) +
 >  facet_grid(. ~ cyl)
 
-Here we see the plots grouped by *cyl* and aligned vertically
+'''Here we see the plots grouped by *cyl* and aligned vertically'''
 
 ![image](/images/Exercise3.5.1.3b.png)
