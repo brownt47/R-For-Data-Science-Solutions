@@ -19,3 +19,26 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
   geom_point() + 
   geom_smooth(se = FALSE)```
 ```
+We should get a scatterplot of *displ* vs *hwy* where the dots will be colored according to the *drv* levels, we should also get an overlay of lines that best fit the data for the *drv* levels, with the confidence boundaries around the lines turned off.  Hopefully the color of the lines matches the color of the points.
+
+and here is the graphic rendered in R
+
+![image](/images/Exercise3.6.1.1.png)
+
+## Exercise 3: What does '''R show.legend = FALSE''' do? What happens if you remove it?
+## Why do you think I used it earlier in the chapter?
+
+The option of 'show.legend = FALSE' will tell the geom to not show the legend next to the plot.  If you remove the line (or set it to TRUE) then it will show the legend so that the viewer can see which line and color correspondes to which *drv* type
+
+I assume the author wanted to remove the legend so the three example code and their graphs could appear as similar as possible.
+
+here is the graph with the line removed and we see the legend to the left of the plot:
+
+```R
+ggplot(data = mpg) +
+  geom_smooth(mapping = aes(x = displ, y = hwy, color = drv) )
+```
+
+![image](/images/Exercise3.6.1.3a.png)
+
+
