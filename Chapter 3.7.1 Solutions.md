@@ -107,7 +107,7 @@ if your data already has summarized data columns, `geom_col` will let you plot b
   
 The following tables lists the pairs of geoms and stats that are almost always used in concert.
 
-### Exercise 3.7.1.3
+### Exercise 3: Most geoms and stats come in pairs that are almost always used in concert. Read through the documentation and make a list of all the pairs. What do they have in common?
 
 <div class="question">
 
@@ -227,3 +227,46 @@ Table: ggplot2 geom layers and their default stats.
 Table: ggplot2 stat layers and their default geoms.
 shamelessly stolen from Jrnold
 </div>
+
+
+### Exercise 4: What variables does stat_smooth() compute? What parameters control its behaviour?
+
+Reference the documenation via `?stat_smooth` and listed in the computed variables we see the following listed:
+
+  > y - predicted value
+
+  > ymin - lower pointwise confidence interval around the mean
+
+  > ymax - upper pointwise confidence interval around the mean
+
+  > se - standard error 
+
+The parameters are dependant on the `method` (or model) used to fit the data.  Things like the `level` of confidence can be changed; the `formula = y~x` for linearly related data or maybe the data is quadratic so `formula = y~ poly(x,2)` would be more appropriate.  There are quite a few features to tweak to get the best smoothed model you want.
+
+### Exercise 5: In our proportion bar chart, we need to set `group = 1`. Why? In other words what is the problem with these two graphs?
+
+Here is the code and chart created earlier:
+```R
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, y = ..prop.., group = 1))
+```
+  ![image](/images/Exercise3.7.1.5a.png)
+
+Here is the first one to compare from the exercise:
+
+```r
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, y = ..prop..))
+```
+ ![image](/images/Exercise3.7.1.5b.png)
+ 
+ 
+ Here is the second one to compare from the exercise:
+ 
+ ```r
+ ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = color, y = ..prop..))
+```
+![image](/images/Exercise3.7.1.5c.png)
+
+
