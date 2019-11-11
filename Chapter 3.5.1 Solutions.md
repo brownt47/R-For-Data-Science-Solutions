@@ -17,6 +17,7 @@ To the first question, the empty cells in the facet grid plots means there are n
 
 >ggplot(data = mpg) + 
 >  geom_point(mapping = aes(x = drv, y = cyl))
+>  facet_wrap(drv~cyl)
 
 ![image](/images/Exercise3.5.1.2.png)
 
@@ -29,7 +30,7 @@ the plot above shows the same thing, it just doesn't take into consideration the
 >  geom_point(mapping = aes(x = displ, y = hwy)) +
 >  facet_grid(drv ~ .)
 
-This will produce multiple plots comparing *displ* vs *hwy* grouped only by the type of *drv*.  The "." indicates to show all the grouped plots in a horizontal fashion.  swapping the location of the dot will have the facet cuts aligned vertically
+This will produce multiple plots comparing *displ* vs *hwy* grouped only by the type of *drv*.  The "." indicates to show all the grouped plots in a horizontal fashion.  The dot also indicates there is no faceting on that dimension.  swapping the location of the dot will have the facet cuts aligned vertically
 
 ![image](/images/Exercise3.5.1.3a.png)
 
@@ -42,7 +43,7 @@ Here we see the plots grouped by *cyl* and aligned vertically
 ![image](/images/Exercise3.5.1.3b.png)
 
 
-**Take the first faceted plot in this section:**
+**Problem 4: Take the first faceted plot in this section:**
 
 >ggplot(data = mpg) + 
 >  geom_point(mapping = aes(x = displ, y = hwy)) + 
@@ -65,3 +66,18 @@ Here is a similar plot using the color aesthetic to represent class of vehicles:
 The faceting allows each class of vehicle to have its own plot where as the color aesthetic is comparing them all on one plot combined. Faceting may help see a pattern in individual classes whereas the color aesthetic may reveal patterns among classes compared to each other.  
 
 If the data set were larger and in particular had more features, then the number of facet grids would increase making it hard to spot a pattern across classes.  The color aesthetic may have too many colors or classes over-lapping to see where one class ends and the next begins.
+
+**Problem 5 Read *?facet_wrap.* What does *nrow* do? What does *ncol* do? What other options control the layout of the individual panels?** 
+
+Recall *?facet_wrap* will bring up the documentation for the facet_wrap feature.  
+
+We are told *nrow* & *ncols* allow us to determine the number of rows and columns to present the plots.  Most of the remaining options for facet_wrap deal with scaling and labels, but there is one that can impact the displaying of panels which is the *drop* feature which will remove panels if no data exists for the factor level(s).
+
+here is an example from problem #2 from this section with *drop = TRUE*. Notice we are missing the panels for feature combinations mentioned above
+
+![image](/images/Exercise3.5.1.5.png)
+
+
+  **Why doesn’t *facet_grid()* have *nrow* and *ncol* arguments?**
+  
+  
