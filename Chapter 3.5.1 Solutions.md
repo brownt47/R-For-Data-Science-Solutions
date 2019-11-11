@@ -3,7 +3,7 @@
 **Problem 1: What happens if you facet on a continuous variable**
 
 There is only one variable in the *mpg* dataset that is continuous, which is the displ category.  if we try to facet cut on that variable, R will create bins for the variable to make it act like a discrete variable.  Trying the code below we see that the bin size is around 0.2 and creates quite a few facets to the point that the facets just blur together to look like a standard x ~ y plot
-```
+```R
  ggplot(data = mpg) + 
      geom_point(mapping = aes(x = drv, y = hwy)) + 
      facet_grid(~ displ)
@@ -14,7 +14,7 @@ There is only one variable in the *mpg* dataset that is continuous, which is the
 **Problem 2: What do the empty cells in plot with facet_grid(drv ~ cyl) mean? How do they relate to this plot?**
 
 To the first question, the empty cells in the facet grid plots means there are no data points for that facet.  So there are no 4-or 5-cylinder vehiles that are rear-wheel drive, nor are there any 5-cylinder vehicles with all-wheel drive (4-wheel drive)
-```
+```R
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = drv, y = cyl))
   facet_wrap(drv~cyl)
@@ -25,7 +25,7 @@ ggplot(data = mpg) +
 the plot above shows the same thing, it just doesn't take into consideration the displ difference in the combination classes of *drv* and *cyl*, with the added exceptions of the y-scale including the possibility of 7-cylinder vehicles due to treating the *drv* variable as a discrete numerical value and not a categorical one. 
 
 **Problem 3: What plots does the following code make? What does . do?**
-```
+```R
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy)) +
   facet_grid(drv ~ .)
@@ -33,7 +33,7 @@ ggplot(data = mpg) +
 This will produce multiple plots comparing *displ* vs *hwy* grouped only by the type of *drv*.  The "." indicates to show all the grouped plots in a horizontal fashion.  The dot also indicates there is no faceting on that dimension.  swapping the location of the dot will have the facet cuts aligned vertically
 
 ![image](/images/Exercise3.5.1.3a.png)
-```
+```R
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy)) +
   facet_grid(. ~ cyl)
@@ -44,7 +44,7 @@ Here we see the plots grouped by *cyl* and aligned vertically
 
 
 **Problem 4: Take the first faceted plot in this section:**
-```
+```R
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy)) + 
   facet_wrap(~ class, nrow = 2)
@@ -57,7 +57,7 @@ Here is the plot from the beginning of the section:
 
 
 Here is a similar plot using the color aesthetic to represent class of vehicles:
-```
+```R
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, color = class))  
 ```
@@ -75,7 +75,7 @@ Recall *?facet_wrap* will bring up the documentation for the facet_wrap feature.
 We are told *nrow* & *ncols* allow us to determine the number of rows and columns to present the plots.  Most of the remaining options for facet_wrap deal with scaling and labels, but there is one that can impact the displaying of panels which is the *drop* feature which will remove panels if no data exists for the factor level(s).
 
 here is an example from problem #2 from this section with *drop = TRUE*. Notice we are missing the panels for feature combinations mentioned above
-```
+```R
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy)) + 
   facet_wrap(drv ~ cyl, drop=TRUE)
@@ -94,7 +94,7 @@ Mostly for presentation and visually appealing layouts.  due to screens being wi
 here are some examples with drv (3 levels) vs class (7 levels)
 
 7 x 3 layout:
-```
+```R
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy)) + 
      facet_grid(class~drv)
@@ -103,7 +103,7 @@ ggplot(data = mpg) +
 
 
 3 x 7 layout
-```
+```R
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy)) + 
      facet_grid(drv~class)
