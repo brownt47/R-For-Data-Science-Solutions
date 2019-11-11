@@ -136,15 +136,13 @@ ggplot() +
   > For shapes that have a border (like 21), you can colour the inside and
   > outside separately. Use the stroke aesthetic to modify the width of the
   > border
-```
->ggplot(mtcars, aes(wt, mpg)) +
->  geom_point(shape = 21, colour = "black", fill = "white", size = 5, stroke = 5)
-```
+  > `ggplot(mtcars, aes(wt, mpg)) +
+  >  geom_point(shape = 21, colour = "black", fill = "white", size = 5, stroke = 5)`
 
-so adding the shape, then using drv to fill in the color, and stroke and color to address the "halo" part
-```
-ggplot() + 
-    geom_point(data = mpg, mapping = aes(x = displ, y = hwy, fill = drv ), size = 5, color="white", stroke = 2, shape=21)
+So adding the `shape=21`, then using *drv* to `fill` in the color, and adjusting `stroke` and `color` to address the "halo" part
+```R
+ggplot(data=mpg) + 
+    geom_point(mapping = aes(x = displ, y = hwy, fill = drv ), size = 5, color="white", stroke = 2, shape=21)
 ```
 ![image](/images/Exercise3.6.1.6f.png)
 
@@ -156,6 +154,9 @@ ggplot() +
     geom_point(data = mpg, mapping = aes(x = displ, y = hwy ), color = "white",  size = 10) +
     geom_point(data = mpg, mapping = aes(x = displ, y = hwy, color = drv ), size = 5)
 ```
+
+This seems like a better recreation of the plot in the text:
+
 ![image](/images/Exercise3.6.1.6g.png)
 
 ## End of Section 3.6.1
