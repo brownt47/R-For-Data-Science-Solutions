@@ -15,5 +15,7 @@ Chapter 3 Solutions
 &nbsp;
 
 [Chapter 3.5.1 Solutions](Chapter 3.5.1 Solutions.md)  
+&nbsp;
 
-
+[Chapter 3.6.1 Solutions](Chapter 3.6.1 Solutions.md)  
+&nbsp;
