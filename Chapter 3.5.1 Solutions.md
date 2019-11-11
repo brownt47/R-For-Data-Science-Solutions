@@ -17,10 +17,25 @@ To the first question, the empty cells in the facet grid plots means there are n
 >ggplot(data = mpg) + 
 >  geom_point(mapping = aes(x = drv, y = cyl))
 
+![image](/images/Exercise3-5-2.png)
+
+
 the plot above shows the same thing, it just doesn't take into consideration the displ difference in the combination classes of drv and cyl, with the added exceptions of the y-scale including the possibility of 7-cylinder vehicles due to treating the drv variable as a discrete numerical value and not a categorical one. 
 
 **Problem 3: What plots does the following code make? What does . do?**
 
-ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy)) +
-  facet_grid(drv ~ .)
+>ggplot(data = mpg) + 
+>  geom_point(mapping = aes(x = displ, y = hwy)) +
+>  facet_grid(drv ~ .)
+
+This will produce multiple plots comparing displ vs hwy grouped by the type of drv.  The "." indicates to show all the grouped plots in a horizontal fashion.  swapping the location of the dot will have the facet cuts aligned vertically
+
+![image](/images/Exercise3-5-1-3a.png)
+
+>ggplot(data = mpg) + 
+>  geom_point(mapping = aes(x = displ, y = hwy)) +
+>  facet_grid(. ~ cyl)
+
+Here we see the plots grouped by cyl and aligned vertically
+
+![image](/images/Exercise3-5-1-3b.png)
