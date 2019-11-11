@@ -1,6 +1,6 @@
 #  Exercises for 3.7.1
 
-## Exercise 1: What is the default geom associated with stat_summary()? How could you rewrite the previous plot to use that geom function instead of the stat function?
+## Exercise 1: What is the default geom associated with `stat_summary()`? How could you rewrite the previous plot to use that geom function instead of the stat function?
 
 Pull up the documentation for it with `?stat_summary()` and you will see in the "Usage section" the `geom` `stat_summary()` is associated with is `pointrange`.  Now pull up the documentaion with `?geom_pointrange` and you will see it's associated stat is `"identity"`.  That is your hint for the next part...
 
@@ -55,13 +55,16 @@ demo <- tribble(
 )
 ```
 
-Looking at the tribble we see there is only one entry/row for "Fair" and the value associated with "Fair" is "1610".  Similarily for the other levels of cuts.
+Looking at the tribble we see there is only one entry for "Fair" and the value associated with "Fair" is "1610".  Same thing for the other levels of cuts.
 
-If we use the geom_bar on this tribble, we will get five bars all with a height of one.  This is because there is only one row for each of the labels "Fair", "Good", etc.
+If we use the `geom_bar` on this tribble, we will get five bars all with a height of one.  This is because there is only one row for each of the labels: "Fair", "Good", etc.
 
  ![image](/images/Exercise3.7.1.2a.png)
  
  If we alter the tribble by adding another "Fair" row, we should see a change in the geom_bar plot now that there are two Fair entries.
+ 
+ `geom_bar` is simply counting the number of rows that have "Fair", "Good", etc. in the `cut` column.
+ 
  ```R
  demo2 <- tribble(
   ~cut,         ~freq,
@@ -79,9 +82,9 @@ ggplot(data = demo2)+
   
    ![image](/images/Exercise3.7.1.2b.png)
    
- Now let's compare what happens to the `demo` and `demo2` tribbles when the `geom_col` is applied  
+ Now let's compare what happens to the `demo` and `demo2` tribbles when the `geom_col` is applied.  Note we have to tell `geom_col` where to get the frequency data for our labels, hence `y=freq` is added to the aesthetic.
  
- **using the `demo` tribble that had one row entry for "Fair"
+ #### Using the `demo` tribble that had one row entry for "Fair"
  
 ```R
  ggplot(data = demo)+
@@ -89,11 +92,16 @@ ggplot(data = demo2)+
 ```
   ![image](/images/Exercise3.7.1.2c.png)
 
-**using the `demo2` tribble that had two row entries for "Fair"  notice it automatically sums them together
+#### Using the `demo2` tribble that had two row entries for "Fair"  *Notice it automatically sums the "Fair" frequencies together*
+
+```R
+ ggplot(data = demo2)+
+  geom_col(aes(x = cut, y = freq))
+```
 
   ![image](/images/Exercise3.7.1.2d.png)
   
-In short, if you have untabulated data - geom_bar will automatically count the total entries for each category
+In short, if you have unsummarized data - `geom_bar` will automatically count the total entries for each category
 
-if your data already has summarized data, geom_col will let you plot bar heights directly from your summarized data.
+if your data already has summarized data columns, `geom_col` will let you plot bar heights directly from your summarized data.
   
