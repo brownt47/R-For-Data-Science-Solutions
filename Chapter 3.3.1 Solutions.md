@@ -4,7 +4,7 @@
 &nbsp;
 
 **Problem 1: What’s gone wrong with this code? Why are the points not blue?**
-```Rstudio
+```R
   ggplot(data = mpg) + 
     geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
 ```
@@ -13,7 +13,7 @@ What happened here is due to "color" being set inside the aesthetic then it is g
 ![image](/images/Exercise3.3.1.1a.png)
 
 inside the aes() call will use the actual data to select colors, sizes, shapes appropriately.  outside the aes() will set the colors, sizes and shapes to whatever you declare.  Here we put the color statement outside of the aes()
-```
+```R
   ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
 ```
 ![image](/images/Exercise3.3.1.1b.png)
@@ -35,7 +35,7 @@ using knowledge gained from the previous problem we can see that the variable di
 keeping the same x and y, try the following to see how continuous vs categorical acts on aesthetics.  And since we want the color, shape and size to react to the data, we place those statements inside the aes() function
 
 Use *displ* for the continuous and *class* for categorical
-```
+```R
   ggplot(data = mpg) + 
       geom_point(mapping = aes(x = displ, y = hwy, color = displ))
 ```
@@ -43,7 +43,7 @@ Use *displ* for the continuous and *class* for categorical
 ![image](/images/Exercise3.3.1.3a.png)
 
 vs
-```
+```R
   ggplot(data = mpg) + 
     geom_point(mapping = aes(x = displ, y = hwy, color = class))
 ```
@@ -57,13 +57,13 @@ as you repeat the above for shape and size, you will get some warning messages a
 ![image](/images/Exercise3.3.1.3d.png)
 
 ![image](/images/Exercise3.3.1.3e.png)
-```
+```R
   ggplot(data = mpg) + 
   +         geom_point(mapping = aes(x = displ, y = hwy, size = displ))
 ```
 
 ![image](/images/Exercise3.3.1.3f.png)
-```
+```R
   ggplot(data = mpg) + 
   +         geom_point(mapping = aes(x = displ, y = hwy, shape = displ))
 ```
@@ -79,7 +79,7 @@ as you repeat the above for shape and size, you will get some warning messages a
 this will simply have all the aesthetics reacting to the same variable.  This could be a nice way to add extra emphasis to the variables importance in the data.  This would be more of a presentation strategy to have the color and size of the points change as the value of a variable also changes.  draw more attention to patterns in the data (and maybe help out anyone in the audience who may be colorblind)
 
 example:
-```
+```R
   ggplot(data = mpg) + 
       geom_point(mapping = aes(x = displ, y = hwy, size = class,color = class))
 ```
@@ -93,7 +93,7 @@ this will create a scatterplot that gives each class it's own color and shape (u
 
 
 
-```
+```R
   ggplot(data = mpg) + 
       geom_point(mapping = aes(x = displ, y = hwy, shape = class,color = class))
 ```
@@ -109,7 +109,7 @@ stroke correspondes to the width of lines when drawing shapes. Solid shapes like
 
 running the example below you will see the star shapes become almost circles as you move left to right whereas the triangles do not change size
 
-```
+```R
   ggplot(data = mpg) + 
       geom_point(mapping = aes(x = displ, y = hwy, shape=class, stroke=displ, color=class))
 ```
@@ -123,7 +123,7 @@ running the example below you will see the star shapes become almost circles as 
 **Problem 6: What happens if you map an aesthetic to something other than a variable name, like aes(colour = displ < 5)? Note, you’ll also need to specify x and y. **
 
 keeping with the same x = displ, y = hwy and adding color = displ < 5 inside the aes() function, the legend will give us a clue as to what is happening
-```
+```R
   ggplot(data = mpg) + 
       geom_point(mapping = aes(x = displ, y = hwy, color=displ<5))
 ```
