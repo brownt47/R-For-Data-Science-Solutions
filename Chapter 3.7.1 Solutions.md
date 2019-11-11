@@ -19,7 +19,7 @@ ggplot(data = diamonds) +
   )
   ```
   
-When `stat_summary` is called, it will automatically calculate some summary statistics on the data that is passed to it and stores the calculated values in similarily named variables.  What we want to do is call the `stat_summary` function into the `geom_pointrange` so that we can reference min and max.  To do this we override the default stat in `geom_pointrange`from `stat="identity"` to `stat="summary"`  note: the call from stat="summary" can come after the values `min` and `max` are referenced.
+When `stat_summary` is called, it will automatically calculate some summary statistics on the data that is passed to it and stores the calculated values in similarily named variables.  What we want to do is call the `stat_summary` function into the `geom_pointrange` so that we can reference `min` and `max`.  To do this we override the default stat in `geom_pointrange`from `stat="identity"` to `stat="summary"`  note: the call from `stat="summary"` can come after the values `min` and `max` are referenced.
 
 ```R
 ggplot(data = diamonds) +
@@ -35,3 +35,65 @@ ggplot(data = diamonds) +
   here we get the replicated plot:
   
   ![image](/images/Exercise3.7.1.1.png)
+
+
+### Exercise 2: What does `geom_col()` do? How is it different to `geom_bar()`?
+
+Once again, pull up the documentation for `?geom_col` using the `?`and it will reference Bar Charts in general and speak about the difference between `geom_col` and `geom_bar`. 
+
+`geom_bar` will count up all the entries of a particular category and display the bar heights as a result of total counts.  `geom-col` will instead create bar hights that match the value of the data.
+
+Let's use the tibble created in the section as an example to contrast the two geoms.
+```R
+demo <- tribble(
+  ~cut,         ~freq,
+  "Fair",       1610,
+  "Good",       4906,
+  "Very Good",  12082,
+  "Premium",    13791,
+  "Ideal",      21551
+)
+```
+
+Looking at the tribble we see there is only one entry/row for "Fair" and the value associated with "Fair" is "1610".  Similarily for the other levels of cuts.
+
+If we use the geom_bar on this tribble, we will get five bars all with a height of one.  This is because there is only one row for each of the labels "Fair", "Good", etc.
+
+ ![image](/images/Exercise3.7.1.2a.png)
+ 
+ If we alter the tribble by adding another "Fair" row, we should see a change in the geom_bar plot now that there are two Fair entries.
+ ```R
+ demo2 <- tribble(
+  ~cut,         ~freq,
+  "Fair",       1610,
+  "Fair",       8500,
+  "Good",       4906,
+  "Very Good",  12082,
+  "Premium",    13791,
+  "Ideal",      21551
+)
+
+ggplot(data = demo2)+
+  geom_bar( aes( x = cut ))
+```
+  
+   ![image](/images/Exercise3.7.1.2b.png)
+   
+ Now let's compare what happens to the `demo` and `demo2` tribbles when the `geom_col` is applied  
+ 
+ **using the `demo` tribble that had one row entry for "Fair"
+ 
+```R
+ ggplot(data = demo)+
+  geom_col(aes(x = cut, y = freq))
+```
+  ![image](/images/Exercise3.7.1.2c.png)
+
+**using the `demo2` tribble that had two row entries for "Fair"  notice it automatically sums them together
+
+  ![image](/images/Exercise3.7.1.2d.png)
+  
+In short, if you have untabulated data - geom_bar will automatically count the total entries for each category
+
+if your data already has summarized data, geom_col will let you plot bar heights directly from your summarized data.
+  
