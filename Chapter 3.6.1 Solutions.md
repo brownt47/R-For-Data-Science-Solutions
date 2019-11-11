@@ -1,7 +1,7 @@
 # Chapter 3.6.1 Exercise Solutions #
 
 
-## Exercise 1: What geom would you use to draw a line chart? A boxplot? A histogram? An area chart?
+### Exercise 1: What geom would you use to draw a line chart? A boxplot? A histogram? An area chart?
 
 Cheatsheets are a good place to start:  here is an updated link (Nov 2019) to one for Geoms:  [Data Visualiztion with ggplot2 Cheat Sheet.pdf](https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
 
@@ -13,7 +13,7 @@ A histogram?  geom_histogram, or a variant like geom_dotplot or geom_bar (if you
 
 An area chart?  lots to choose from here depending on your data.  geom_area, geom_polygon, geom_map
 
-## Exercise 2: Run this code in your head and predict what the output will look like. Then, run the code in R and check your predictions. 
+### Exercise 2: Run this code in your head and predict what the output will look like. Then, run the code in R and check your predictions. 
 ```R
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) + 
   geom_point() + 
@@ -25,7 +25,7 @@ and here is the graphic rendered in R
 
 ![image](/images/Exercise3.6.1.1.png)
 
-## Exercise 3: What does '''R show.legend = FALSE''' do? What happens if you remove it? Why do you think I used it earlier in the chapter?
+### Exercise 3: What does '''R show.legend = FALSE''' do? What happens if you remove it? Why do you think I used it earlier in the chapter?
 
 The option of 'show.legend = FALSE' will tell the geom to not show the legend next to the plot.  If you remove the line (or set it to TRUE) then it will show the legend so that the viewer can see which line and color correspondes to which *drv* type
 
@@ -44,13 +44,13 @@ ggplot(data = mpg) +
 
 This will add the shaded region around the line that represents the 'standard error (se)' for the line.  You may also know this as the confidence interval based on a level of confidence (default is 95%) from your statistics studies.  
 
-Here is an example from this section with the 'se' feature set to 'TRUE' and 'FALSE'
+Here is an example from this section with the `se` feature set to `FALSE` and `TRUE`
 ```R
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
   geom_point(mapping = aes(color = class)) + 
   geom_smooth(data = filter(mpg, class == "subcompact"), se = FALSE)
 ```
-
+**`se` value set to `FALSE`
 ![image](/images/Exercise3.6.1.4a.png)
 
 ```R
@@ -58,5 +58,6 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
   geom_point(mapping = aes(color = class)) + 
   geom_smooth(data = filter(mpg, class == "subcompact"), se = TRUE)
 ```
+**`se` value set to `TRUE`
 ![image](/images/Exercise3.6.1.4b.png)
 
