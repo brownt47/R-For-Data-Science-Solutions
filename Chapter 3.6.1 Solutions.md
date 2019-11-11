@@ -61,3 +61,55 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 #### `se` value set to `TRUE`
 ![image](/images/Exercise3.6.1.4b.png)
 
+### Exercise 5: Will these two graphs look different? Why/why not?
+
+These graphs should look the same.  They are all using the same data and mappings, just the first one is declaring it in the ggplt statement with the idea it will be passed to the following geoms, the latter is declaring the data and mappings within each geom separately.
+```R
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  geom_smooth()
+```
+![image](/images/Exercise3.6.1.5a.png)
+
+```R
+ggplot() + 
+  geom_point(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy))
+```
+
+![image](/images/Exercise3.6.1.5b.png)
+
+
+### Exercise 6: Recreate the R code necessary to generate the following graphs.
+
+**Upper Left** - we see all the points in the same color and one line passing thru the points.  doesn't seem to be any differentiation on any other features or variables.  The size of the line stroke seems to be a bit thick and looks to have `se` set to `FALSE`.  Also the dots seem to overlap, so increase the size in the points geom.  Lastly, notice the blue line is covering the dots it passes.  the line is sitting on top of the dots
+
+```R
+ggplot() + 
+  geom_point(data = mpg, mapping = aes(x = displ, y = hwy), size = 5) + 
+  geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy), se = FALSE, size = 3)
+```
+![image](/images/Exercise3.6.1.6a.png)
+
+**Upper Right** - similar to the Upper Left plot, but there are now three trend lines.  They appear to be the same ones seen earlier in the section that are grouped according to *drv* type.  Notice the line is behind the dots here, so we will change the order of our geoms.
+
+```R
+ggplot() + 
+  geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy, group = drv),  se = FALSE, size = 3) +
+  geom_point(data = mpg, mapping = aes(x = displ, y = hwy), size = 5) 
+  ```
+![image](/images/Exercise3.6.1.6b.png)
+
+**Middle Left** - Now we see the lines and dots are color coded to the *drv* variable. Here we can drop the `group` option in exchange for `color` inside the aesthetics.  Hard to distinguise if the dots are on top of the lines or vice-verse.  Try both to see which is the best match.   it seems the dots are on top of the lines
+
+```R
+ggplot() + 
+  geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy, color = drv),  se=FALSE, size = 3)+
+  geom_point(data = mpg, mapping = aes(x = displ, y = hwy, color=drv), size = 5) 
+```
+
+![image](/images/Exercise3.6.1.6c.png)
+
+
+
+
