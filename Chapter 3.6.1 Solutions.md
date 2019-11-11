@@ -105,11 +105,57 @@ ggplot() +
 ```R
 ggplot() + 
   geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy, color = drv),  se=FALSE, size = 3)+
-  geom_point(data = mpg, mapping = aes(x = displ, y = hwy, color=drv), size = 5) 
+  geom_point(data = mpg, mapping = aes(x = displ, y = hwy, color = drv), size = 5) 
 ```
 
 ![image](/images/Exercise3.6.1.6c.png)
 
+**Middle Right** - Here we are reverting back to one line for the whole data set and it appears to be set on top of the points/dots.
+
+```
+ggplot() + 
+  geom_point(data = mpg, mapping = aes(x = displ, y = hwy, color = drv), size = 5) +
+  geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy),  se = FALSE, size = 3)
+```  
+
+![image](/images/Exercise3.6.1.6d.png)
 
 
+**Lower Left** - similar to the Middle Left, just adding a line stroke feature of solid and dashed lines, but all the lines are the same color.  So we will remove the `color=drv` and replace it with `linestyle=drv` inside the aesthetic of the smooth geom.  The lines appear to be on top of the points as well.
 
+```R
+ggplot() + 
+    geom_point(data = mpg, mapping = aes(x = displ, y = hwy, color = drv ), size = 5) +
+    geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy, linetype = drv),  se = FALSE, size = 3)
+ ```
+
+![image](/images/Exercise3.6.1.6e.png)
+
+**Lower Right** - no lines are present, so we will remove the smooth geom completely.  It seems the points have white halos around them. Use `?geom_point` to see what option will turn on that effect.  here is a hint from the documentation:
+
+  > For shapes that have a border (like 21), you can colour the inside and
+  > outside separately. Use the stroke aesthetic to modify the width of the
+  > border
+```
+>ggplot(mtcars, aes(wt, mpg)) +
+>  geom_point(shape = 21, colour = "black", fill = "white", size = 5, stroke = 5)
+```
+
+so adding the shape, then using drv to fill in the color, and stroke and color to address the "halo" part
+```
+ggplot() + 
+    geom_point(data = mpg, mapping = aes(x = displ, y = hwy, fill = drv ), size = 5, color="white", stroke = 2, shape=21)
+```
+![image](/images/Exercise3.6.1.6f.png)
+
+
+this is close but the stroke/halo's of the points seem to cover up other points.  Maybe two sets of points overlapped can make the graph appear similar to the text.  Notice on the first geom for the background large white points, I placed the `color="white"` outside of the `aes()` statement since I want all the points to be white.  Whereas for the geom plotting the foreground points, i want the color to react to the data in drv so I place the `color = drv` inside the `aes()` statement
+
+```R
+ggplot() + 
+    geom_point(data = mpg, mapping = aes(x = displ, y = hwy ), color = "white",  size = 10) +
+    geom_point(data = mpg, mapping = aes(x = displ, y = hwy, color = drv ), size = 5)
+```
+![image](/images/Exercise3.6.1.6g.png)
+
+## End of Section 3.6.1
