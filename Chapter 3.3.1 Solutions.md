@@ -4,7 +4,7 @@
 &nbsp;
 
 **Problem 1: What’s gone wrong with this code? Why are the points not blue?**
-```
+```Rstudio
   ggplot(data = mpg) + 
     geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
 ```
