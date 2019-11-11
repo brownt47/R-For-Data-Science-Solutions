@@ -59,7 +59,7 @@ Here is the plot from the beginning of the section:
 Here is a similar plot using the color aesthetic to represent class of vehicles:
 
 >ggplot(data = mpg) + 
->  geom_point(mapping = aes(x = displ, y = hwy, color=class))  
+>  geom_point(mapping = aes(x = displ, y = hwy, color = class))  
 
 ![image](/images/Exercise3.5.1.4b.png)
 
@@ -67,7 +67,7 @@ The faceting allows each class of vehicle to have its own plot where as the colo
 
 If the data set were larger and in particular had more features, then the number of facet grids would increase making it hard to spot a pattern across classes.  The color aesthetic may have too many colors or classes over-lapping to see where one class ends and the next begins.
 
-**Problem 5 Read *?facet_wrap.* What does *nrow* do? What does *ncol* do? What other options control the layout of the individual panels? Why doesn’t *facet_grid()* have *nrow* and *ncol* arguments?** 
+**Problem 5" Read *?facet_wrap.* What does *nrow* do? What does *ncol* do? What other options control the layout of the individual panels? Why doesn’t *facet_grid()* have *nrow* and *ncol* arguments?** 
 
 Recall *?facet_wrap* will bring up the documentation for the facet_wrap feature.  
 
@@ -82,11 +82,11 @@ here is an example from problem #2 from this section with *drop = TRUE*. Notice 
 ![image](/images/Exercise3.5.1.5.png)
 
 
-**Why doesn’t *facet_grid()* have *nrow* and *ncol* arguments?**
+  **Why doesn’t *facet_grid()* have *nrow* and *ncol* arguments?**
   
   The rows and columns of the facet_grid will be based upon the number of features in the faceting groups.
   
-**When using facet_grid() you should usually put the variable with more unique levels in the columns. Why?**
+**When using *facet_grid()* you should usually put the variable with more unique levels in the columns. Why?**
 
 Mostly for presentation and visually appealing layouts.  due to screens being wider than they are taller, it is better formatting technique to have panels closer to squares than stretched rectangles.
 
