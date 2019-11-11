@@ -258,6 +258,16 @@ Here is the first one to compare from the exercise:
 ggplot(data = diamonds) + 
   geom_bar(mapping = aes(x = cut, y = ..prop..))
 ```
+
+I understand that not everything can be explained when writing an intro book, but a sentence or two on what `..prop..` does in this code may help.  So here is what I found on the convention:
+
+>stat_count provides two internal variables ..count.. and ..prop.., referring to count and proportion respectively. Don’t be surprised >by the ..name.. notation, it is used to prevent confusion with your own columns 
+>(don’t name your own columns with weird names like ..count..!)
+
+as far as setting `group=1` I found the graph looked the same regardless of what `group` was set to.  `group=TRUE` generated same thing as `group=FALSE`which was the same as `group=10`.  There is not much in the documentation on how `group` works here, other than it seems to be needed so that the `geom_bar` reacts to groups of data and their values and not just count row entries as it default wants to do.
+
+hence it is reading that each cut has one proportion entry and so we have five bars with a height of 1.
+
  ![image](/images/Exercise3.7.1.5b.png)
  
  
@@ -267,6 +277,8 @@ ggplot(data = diamonds) +
  ggplot(data = diamonds) + 
   geom_bar(mapping = aes(x = cut, fill = color, y = ..prop..))
 ```
+again we are missing the `group` argument, so the bars are set at a height of one and each color category is evenly distributed since geom_bar is just reacting to the fact there is one row entry for ideal cuts with color E, then one entry for ideal cutes with color F...
+
 ![image](/images/Exercise3.7.1.5c.png)
 
 
