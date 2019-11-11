@@ -55,7 +55,7 @@ demo <- tribble(
 )
 ```
 
-Looking at the tribble we see there is only one entry for "Fair" and the value associated with "Fair" is "1610".  Same thing for the other levels of cuts.
+Looking at the tribble we see there is only one entry for "Fair" and the value associated with "Fair" is "1610".  Same thing for the other levels of cuts; there is only one row entry for each cut.
 
 If we use the `geom_bar` on this tribble, we will get five bars all with a height of one.  This is because there is only one row for each of the labels: "Fair", "Good", etc.
 
