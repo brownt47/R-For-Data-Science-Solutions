@@ -31,7 +31,7 @@ The option of `show.legend = FALSE` will tell the geom to not show the legend ne
 
 I assume the author wanted to remove the legend so the three example code and their graphs could appear as similar as possible.
 
-here is the graph with the line removed and we see the legend to the left of the plot:
+here is the graph with the line removed and we see the legend to the right of the plot:
 
 ```R
 ggplot(data = mpg) +
@@ -50,7 +50,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
   geom_point(mapping = aes(color = class)) + 
   geom_smooth(data = filter(mpg, class == "subcompact"), se = FALSE)
 ```
-**`se` value set to `FALSE`
+** `se` value set to `FALSE`
 ![image](/images/Exercise3.6.1.4a.png)
 
 ```R
@@ -58,6 +58,6 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
   geom_point(mapping = aes(color = class)) + 
   geom_smooth(data = filter(mpg, class == "subcompact"), se = TRUE)
 ```
-**`se` value set to `TRUE`
+** `se` value set to `TRUE`
 ![image](/images/Exercise3.6.1.4b.png)
 
