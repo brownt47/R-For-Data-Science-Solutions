@@ -13,10 +13,10 @@ There is only one variable in the *mpg* dataset that is continuous, which is the
 **Problem 2: What do the empty cells in plot with facet_grid(drv ~ cyl) mean? How do they relate to this plot?**
 
 To the first question, the empty cells in the facet grid plots means there are no data points for that facet.  So there are no 4-or 5-cylinder vehiles that are rear-wheel drive, nor are there any 5-cylinder vehicles with all-wheel drive (4-wheel drive)
-
+'''
 >ggplot(data = mpg) + 
 >  geom_point(mapping = aes(x = drv, y = cyl))
-
+'''
 ![image](/images/Exercise3.5.1.2.png)
 
 
@@ -36,6 +36,8 @@ This will produce multiple plots comparing *displ* vs *hwy* grouped only by the 
 >  geom_point(mapping = aes(x = displ, y = hwy)) +
 >  facet_grid(. ~ cyl)
 
-'''Here we see the plots grouped by *cyl* and aligned vertically'''
+'''
+Here we see the plots grouped by *cyl* and aligned vertically
+'''
 
 ![image](/images/Exercise3.5.1.3b.png)
