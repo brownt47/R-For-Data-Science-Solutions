@@ -277,7 +277,7 @@ hence it is reading that each cut has one proportion entry and so we have five b
  ggplot(data = diamonds) + 
   geom_bar(mapping = aes(x = cut, fill = color, y = ..prop..))
 ```
-again we are missing the `group` argument, so the bars are set at a height of one and each color category is evenly distributed since geom_bar is just reacting to the fact there is one row entry for ideal cuts with color E, then one entry for ideal cutes with color F...
+again we are missing the `group` argument, so the bars are set at a height of one and each color category is evenly distributed since `geom_bar` is just reacting to the fact there is one row entry for ideal cuts with color E, then one entry for ideal cuts with color F, then one entry for ideal cuts with color J...each level of cut and each level of color is one row entry in the data, which is why everything is adding up to one and evenly distributed in the column bars.
 
 ![image](/images/Exercise3.7.1.5c.png)
 
