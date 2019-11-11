@@ -44,7 +44,7 @@ Once again, pull up the documentation for `?geom_col` using the `?`and it will r
 `geom_bar` will count up all the entries of a particular category and display the bar heights as a result of total counts.  `geom-col` will instead create bar hights that match the value of the data.
 
 Let's use the tibble created in the section as an example to contrast the two geoms.
-```R
+```{R message=False}
 demo <- tribble(
   ~cut,         ~freq,
   "Fair",       1610,
@@ -107,7 +107,7 @@ if your data already has summarized data columns, `geom_col` will let you plot b
   
 The following tables lists the pairs of geoms and stats that are almost always used in concert.
 
-### Exercise 3.7.3 {.unnumbered .exercise data-number="3.7.3"}
+### Exercise 3.7.1.3
 
 <div class="question">
 
@@ -225,5 +225,5 @@ Table: ggplot2 geom layers and their default stats.
 | `stat_sf()`          | `geom_rect()`       | x           |
 
 Table: ggplot2 stat layers and their default geoms.
-
+shamelessly stolen from Jrnold
 </div>
