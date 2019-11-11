@@ -14,7 +14,8 @@ A histogram?  geom_histogram, or a variant like geom_dotplot or geom_bar (if you
 An area chart?  lots to choose from here depending on your data.  geom_area, geom_polygon, geom_map
 
 ## Exercise 2: Run this code in your head and predict what the output will look like. Then, run the code in R and check your predictions. 
-
-```ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) + 
+```R
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) + 
   geom_point() + 
   geom_smooth(se = FALSE)```
+```
