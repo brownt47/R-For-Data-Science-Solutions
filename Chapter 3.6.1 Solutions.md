@@ -25,8 +25,7 @@ and here is the graphic rendered in R
 
 ![image](/images/Exercise3.6.1.1.png)
 
-## Exercise 3: What does '''R show.legend = FALSE''' do? What happens if you remove it?
-## Why do you think I used it earlier in the chapter?
+## Exercise 3: What does '''R show.legend = FALSE''' do? What happens if you remove it? Why do you think I used it earlier in the chapter?
 
 The option of 'show.legend = FALSE' will tell the geom to not show the legend next to the plot.  If you remove the line (or set it to TRUE) then it will show the legend so that the viewer can see which line and color correspondes to which *drv* type
 
@@ -41,4 +40,23 @@ ggplot(data = mpg) +
 
 ![image](/images/Exercise3.6.1.3a.png)
 
+### Exercise 4: What does the 'se' argument to 'geom_smooth()' do?
+
+This will add the shaded region around the line that represents the 'standard error (se)' for the line.  You may also know this as the confidence interval based on a level of confidence (default is 95%) from your statistics studies.  
+
+Here is an example from this section with the 'se' feature set to 'TRUE' and 'FALSE'
+```R
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(color = class)) + 
+  geom_smooth(data = filter(mpg, class == "subcompact"), se = FALSE)
+```
+
+![image](/images/Exercise3.6.1.4a.png)
+
+```R
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(color = class)) + 
+  geom_smooth(data = filter(mpg, class == "subcompact"), se = TRUE)
+```
+![image](/images/Exercise3.6.1.4b.png)
 
