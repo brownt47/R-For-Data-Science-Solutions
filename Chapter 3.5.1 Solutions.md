@@ -86,7 +86,7 @@ here is an example from problem #2 from this section with *drop = TRUE*. Notice 
   
   The rows and columns of the facet_grid will be based upon the number of features in the faceting groups.
   
-**When using *facet_grid()* you should usually put the variable with more unique levels in the columns. Why?**
+**Problem 6: When using *facet_grid()* you should usually put the variable with more unique levels in the columns. Why?**
 
 Mostly for presentation and visually appealing layouts.  due to screens being wider than they are taller, it is better formatting technique to have panels closer to squares than stretched rectangles.
 
