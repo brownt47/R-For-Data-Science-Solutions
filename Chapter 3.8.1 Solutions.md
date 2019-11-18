@@ -38,42 +38,21 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy, shape=drv)) +
 
 ![image](/images/Exercise3.8.1.1c.png)
 
-To address the issue of overplotting, we can add noise to the data with `geom_jitter` instead of `geom_point`
+To address the issue of overplotting, we can add noise to the data by changing the `position` parameter to `"jitter"` instead of leaving it as the default setting `"identity"`
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
-  geom_jitter()
+  geom_point(position = "jitter")
 ```
 ![image](/images/Exercise3.8.1.1d.png)
 
-looking at the `?geom_jitter` documentation you will see you can control how "jittery" you want your data to be.  You can specify how much noise in the vertical or horizontal direction.
 
-Here is a recreation with very small values of "jitter" = 0.05.  notice the points are still overlapping quite a bit and it looks very similar to the graph in the exercise.
-
-```r
-ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
-  geom_jitter(height = .05, width = .05)
-```
-![image](/images/Exercise3.8.1.1e.png)
-
-
-Here is one with possibly too much "jitter" = 5
-
-```r
-ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
-  geom_jitter(height = 5, width = 5)
-```
-
-![image](/images/Exercise3.8.1.1f.png)
-
-
-It would appear the default values for the amount of jitter were adequate without needing to adjust the amount of noise for jittering.
 
 Now combine all the above together...color, shapes, size, jitter:
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy, color = class, shape = drv)) + 
-  geom_jitter(size = 3)
+  geom_point(size = 3, position = "jitter")
 ```
 
 ![image](/images/Exercise3.8.1.1g.png)
@@ -85,7 +64,28 @@ Did we improve this plot?  We hope so.  This is a debate for the field of visual
 
 ## Exercise 2: What parameters to `geom_jitter()` control the amount of jittering? 
 
-We already addressed this partly in the previous exercise
+looking at the `?geom_jitter` documentation you will see you can control how "jittery" you want your data to be.  You can specify how much noise in the vertical or horizontal direction.
+
+Here is a recreation with very small values of "jitter" = 0.05.  notice the points are still overlapping quite a bit and it looks very similar to the graph in the exercise.
+
+```r
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_jitter(height = 0.05, width = 0.05)
+```
+![image](/images/Exercise3.8.1.1e.png)
+
+Here is one with possibly too much "jitter" = 5
+
+```r
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_jitter(height = 5, width = 5)
+```
+
+![image](/images/Exercise3.8.1.1f.png)
+
+It would appear the default values for the amount of jitter were adequate without needing to adjust the amount of noise for jittering.
+
+A deeper dive into controlling the jitter effects:
 
 pulling directly from `?geom_jitter` we find the following:
 
@@ -202,7 +202,7 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
 As per usual, utilize `?geom_boxplot` to access the documentation to find defaults for geoms:
 
 ```geom_boxplot(mapping = NULL, data = NULL, stat = "boxplot",
-  **position = "dodge2"**, ..., outlier.colour = NULL,
+  position = "dodge2", ..., outlier.colour = NULL,
   outlier.color = NULL, outlier.fill = NULL, outlier.shape = 19,
   outlier.size = 1.5, outlier.stroke = 0.5, outlier.alpha = NULL,
   notch = FALSE, notchwidth = 0.5, varwidth = FALSE, na.rm = FALSE,
@@ -220,7 +220,7 @@ ggplot(data = mpg, mapping = aes(x = class, y = hwy)) +
 
 ![image](/images/Exercise3.8.1.4b.png)
 
-Now lets split each boxplot into categories of the type of `drv` by assigning each `dyv` type to a color:
+Now lets split each boxplot into categories of the type of `drv` by assigning each `drv` type to a color:
 
 ```r
 ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) + 
