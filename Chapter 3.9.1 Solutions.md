@@ -93,9 +93,9 @@ ggplot(data = mpg) +
 ```
   ![image](/images/Exercise3.9.1.1i.png)
 
-It looks more like a pie, but not cut right.  This is referred to as a *bullseye* chart.  The number of data items in each category is captured by how thick the radial (or donut) sections are.  
+It looks more like a pie, but not cut right.  This is referred to as a *bullseye* chart.  The number of data items in each category is captured by how thick each annulus (or donut) sections are.  
 
-Digging back through the documentation in `?coord_polar` there is a parameter `theta` that will use either the x data or y data to determine where to cut the pie.  It defaults to "x" so try "y" to see what happens.  This is akin assigning data to *r* or *θ* for calculations like *S = rθ* for those that recall things about sectors and polor coordinate system
+Digging back through the documentation in `?coord_polar` there is a parameter `theta` that will use either the `x` data or `y` data to determine where to cut the pie into more expected slices.  It defaults to "x" so try "y" to see what happens.  This is akin assigning data to *r* or *θ* variables for calculations like *S = rθ* and *A=r²θ* for those that recall things about sectors and polor coordinate system.
 
 ```r
 ggplot(data = mpg) +
@@ -104,9 +104,9 @@ ggplot(data = mpg) +
 ```
   ![image](/images/Exercise3.9.1.1j.png)
 
-Now we have a pie chart.  I am sure there are more features we can add to clean it up, but I am trying to just create things from the text or documentation within R as best as I can stumble upon.  Just trying things out and playing around with settings seems to be a major theme to this text.
+Now we have a pie chart.  I am sure there are more features and structures we can add to clean it up, but I am trying to just create things from the text or documentation within R as best as I can stumble upon.  Just trying things out and playing around with settings seems to be a major theme to this text.
 
-Not to neglect our `class` data:
+Not to neglect our `class` data for creating a pie chart:
 
 ```r
 ggplot(data = mpg) +
@@ -114,3 +114,18 @@ ggplot(data = mpg) +
   coord_polar(theta = "y")
 ```
   ![image](/images/Exercise3.9.1.1k.png)
+  
+  ## Exercise 2: What does `labs()` do? Read the documentation.
+  
+  Pulling up the documentation with `?labs` we can see this will allow us to create and modify labels for the plot.
+  
+ From things like axis labels, chart titles, subtitles, etc.
+ 
+ ```r
+  geom_bar(mapping = aes(x = 2, fill=class)) +
+  coord_polar(theta="y") + 
+  labs(caption="this is a poorly made pie chart")+
+  labs(x="X marks the spot on this axis") +
+  labs(title = "Best Pie chart in the world", subtitle="title not meant to be taken seriously")
+```
+  ![image](/images/Exercise3.9.1.2a.png)
