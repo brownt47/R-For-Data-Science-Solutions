@@ -126,6 +126,6 @@ ggplot(data = mpg) +
   coord_polar(theta="y") + 
   labs(caption="this is a poorly made pie chart")+
   labs(x="X marks the spot on this axis") +
-  labs(title = "Best Pie chart in the world", subtitle="title not meant to be taken seriously")
+  labs(title = "best Pie chart in the world", subtitle="title not meant to be taken seriously")
 ```
   ![image](/images/Exercise3.9.1.2a.png)
