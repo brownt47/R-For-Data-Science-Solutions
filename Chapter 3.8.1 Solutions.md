@@ -92,18 +92,16 @@ pulling directly from `?geom_jitter` we find the following:
 **width**	
 
 >Amount of vertical and horizontal jitter. The jitter is added in both positive and negative directions, so the total spread is twice the value specified here.
-
 >If omitted, defaults to 40% of the resolution of the data: this means the jitter values will occupy 80% of the implied bins. Categorical data is aligned on the integers, so a width or height of 0.5 will spread the data so it's not possible to see the distinction between the categories.
 
 **height**
 
 >Amount of vertical and horizontal jitter. The jitter is added in both positive and negative directions, so the total spread is twice the value specified here.
-
 >If omitted, defaults to 40% of the resolution of the data: this means the jitter values will occupy 80% of the implied bins. Categorical data is aligned on the integers, so a width or height of 0.5 will spread the data so it's not possible to see the distinction between the categories.
 
 You can choose to add noise in either direction: horizontally, vertically, or both.  You can even remove noise by setting the parameter to zero.
 
-Using the plot from ***Exercise 1***, try out a few values for the `width` parameter:  `0.1, 1, 5`   and we will turn off the vertical jittering by setting `height = 0`
+Using the plot from **Exercise 1**, try out a few values for the `width` parameter:  `0.1, 1, 5`   and we will turn off the vertical jittering by setting `height = 0`
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
@@ -146,7 +144,7 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
 
 ![image](/images/Exercise3.8.1.2g.png)
 
-Lastly for fun, setting both `width` and `height` to a large value should truly scatter the scatterplot to be unrecognizable from the original overplotted data in ***Exercise 1***
+Lastly for fun, setting both `width` and `height` to a large value should truly scatter the scatterplot to be unrecognizable from the original overplotted data in **Exercise 1**
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
@@ -158,7 +156,7 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
 
 ## Exercise 3: Compare and contrast `geom_jitter()` with `geom_count()`
 
-Pictures are worth 1000 words right?  Let us use the plot from ***Exercise 1*** with the different geoms
+Pictures are worth 1000 words right?  Let us use the plot from **Exercise 1** with the different geoms
 
 The original with `geom_point`
 
@@ -166,7 +164,7 @@ The original with `geom_point`
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
   geom_point()
 ```
-![image](/images/Exercise3.8.1.1a.png)
+![image](/images/Exercise3.8.1.1.png)
 
 Now revisit the plot with `geom_jitter`
 
@@ -189,9 +187,9 @@ The `geom_count` will adjust the size of the plotted points based on the number 
 
 There are a few features to tweak with `geom_count` with the two internal calculated values `n = number of observations at position` and `prop = percent of points in the panal at that position`
 
-recall to reference an internal calculated value place ".." around the value.
+recall to reference an internal calculated value place ".." around the value.   `..n..` and `..prop..` in this case
 
-To demonstrate lets change the color of the points to react to the proportion of data points at that location.  Since I want the parameter to react to the data (or a value calculated from the data in this case), I will place the argument inside an aesthetic:
+To demonstrate, lets change the color of the points to react to the proportion of data points at that location.  Since I want the parameter to react to the data (or a value calculated from the data in this case), I will place the argument `color = ..prop..`inside an aesthetic:
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
@@ -199,3 +197,4 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
 ```
 ![image](/images/Exercise3.8.1.4a.png)
 
+## Exercise 4: What’s the default position adjustment for geom_boxplot()? Create a visualisation of the mpg dataset that demonstrates it.
