@@ -93,5 +93,24 @@ ggplot(data = mpg) +
 ```
   ![image](/images/Exercise3.9.1.1i.png)
 
+It looks more like a pie, but not cut right.  This is referred to as a *bullseye* chart.  The number of data items in each category is captured by how thick the radial (or donut) sections are.  
 
+Digging back through the documentation in `?coord_polar` there is a parameter `theta` that will use either the x data or y data to determine where to cut the pie.  It defaults to "x" so try "y" to see what happens.  This is akin assigning data to *r* or *θ* for calculations like *S = rθ* for those that recall things about sectors and polor coordinate system
 
+```r
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = 1, fill = drv)) +
+  coord_polar(theta = "y")
+```
+  ![image](/images/Exercise3.9.1.1j.png)
+
+Now we have a pie chart.  I am sure there are more features we can add to clean it up, but I am trying to just create things from the text or documentation within R as best as I can stumble upon.  Just trying things out and playing around with settings seems to be a major theme to this text.
+
+Not to neglect our `class` data:
+
+```r
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = 1, fill = class)) +
+  coord_polar(theta = "y")
+```
+  ![image](/images/Exercise3.9.1.1k.png)
