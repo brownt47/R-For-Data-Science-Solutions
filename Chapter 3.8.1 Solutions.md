@@ -201,7 +201,8 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
 
 As per usual, utilize `?geom_boxplot` to access the documentation to find defaults for geoms:
 
-```geom_boxplot(mapping = NULL, data = NULL, stat = "boxplot",
+```
+geom_boxplot(mapping = NULL, data = NULL, stat = "boxplot",
   position = "dodge2", ..., outlier.colour = NULL,
   outlier.color = NULL, outlier.fill = NULL, outlier.shape = 19,
   outlier.size = 1.5, outlier.stroke = 0.5, outlier.alpha = NULL,
