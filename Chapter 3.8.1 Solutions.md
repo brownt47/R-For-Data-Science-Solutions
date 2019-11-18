@@ -253,11 +253,13 @@ ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) +
   geom_boxplot(position = "dodge")
 ```
 
-I cannot detect any drastic difference between `"dodge"` and `"dodge2"` for all the feaures in this plot, but we can see every `drv`-boxplot is spaced out so as to avoid or 'dodge' any other `drv`-boxplots nearby.  The "dodge2" appears to add some padding between two boxplots that are next to each other.  Look at the SUV category for "dodge" and "dodge2" to see the spacing.
+I cannot detect any drastic difference between `"dodge"` and `"dodge2"` for all the feaures in this plot, but we can see every `drv`-boxplot is spaced out so as to avoid or 'dodge' any other `drv`-boxplots nearby.  .
 
-"dodge"
+`"dodge"`
 ![image](/images/Exercise3.8.1.4f.png)
 
-"dodge2"
+The default setting for boxplots of `"dodge2"` appears to add some padding between two boxplots that are next to each other.  Look at the 'suv' or 'compact' category for `"dodge"` and `"dodge2"` to see the spacing
+
+`"dodge2"`
 ![image](/images/Exercise3.8.1.4c.png)
 
