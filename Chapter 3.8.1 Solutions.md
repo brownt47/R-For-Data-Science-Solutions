@@ -7,11 +7,12 @@
   ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
      geom_point()
 ```
+![image](/images/Exercise3.8.1.1.png)
 
-Depending on the audience, there could be a whole host of things wrong with the plot.  Could we use color to differentiate the 
-`class` of vehicles?  Should we use shapes to denote the type of `drv` class of each vehicle? Do we look at overplottting as mentioned in the section?
+Depending on the audience, there could be a whole host of things wrong with the plot.  Should we make use of color to differentiate the 
+`class` of vehicles?  Should we use shapes to denote the type of `drv` class of each vehicle? Do we look for overplottting as mentioned in the section?
 
-Adding colors for each `class`.  Since we want the `color` feature to react to the data itself, we will place the argument inside the aesthetic:
+Say we want to add colors for each `class`.  Since we want the `color` feature to react to the data itself, we will place the argument `color = class` inside the aesthetic:
 
 ```R
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy, color = class)) + 
@@ -19,7 +20,7 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy, color = class)) +
 ```
 ![image](/images/Exercise3.8.1.1a.png)
 
-Denoting the `cyl` for each data point by assigning a shape, again, place inside the aesthetic:
+Denoting the `cyl` for each data point by assigning a shape, again, place inside the aesthetic since we want the shape to react to the data:
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy, shape = drv)) + 
@@ -28,7 +29,7 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy, shape = drv)) +
 
 ![image](/images/Exercise3.8.1.1b.png)
 
-Not bad but a little hard to see the shapes.  Let us increase the size of the points.  Note: since we want to change the size of the points, we will add the `size=3` argument in the `geom_point()` function
+Not bad but a little hard to see the shapes.  Let us increase the size of the points.  Note: since we want to change the size of the points, we will add the `size=3` argument in the `geom_point()` function.  It does not need to go inside the aesthetic since we want all the points to be larger, regardless of what the data points' shape represents
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy, shape=drv)) + 
@@ -66,9 +67,9 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
 ![image](/images/Exercise3.8.1.1f.png)
 
 
-It would appear the default values for the amount of jitter were adequate.
+It would appear the default values for the amount of jitter were adequate without needing to adjust the amount of noise for jittering.
 
-Now we could combine all the above together...color, shapes, size, jitter:
+Now combine all the above together...color, shapes, size, jitter:
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy, color = class, shape = drv)) + 
@@ -77,12 +78,12 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy, color = class, shape = drv)) 
 
 ![image](/images/Exercise3.8.1.1g.png)
 
-Did we improve this plot?  We hope so, but that is a debate for the field of visualization.  Right now we are just practicing ways to alter plots in the hopes of improving the showcasing of the data we want to display.
+Did we improve this plot?  We hope so.  This is a debate for the field of visualization.  Right now we are just practicing ways to alter plots in the hopes of improving the showcasing of the data we want to display.
 
 
 
 
-## Exercise 2: What parameters to geom_jitter() control the amount of jittering? 
+## Exercise 2: What parameters to `geom_jitter()` control the amount of jittering? 
 
 We already addressed this partly in the previous exercise
 
