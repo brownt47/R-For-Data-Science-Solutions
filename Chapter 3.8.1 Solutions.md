@@ -154,3 +154,48 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
 ```
 
 ![image](/images/Exercise3.8.1.2h.png)
+
+
+## Exercise 3: Compare and contrast `geom_jitter()` with `geom_count()`
+
+Pictures are worth 1000 words right?  Let us use the plot from ***Exercise 1*** with the different geoms
+
+The original with `geom_point`
+
+```r
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_point()
+```
+![image](/images/Exercise3.8.1.1a.png)
+
+Now revisit the plot with `geom_jitter`
+
+```r
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_jitter()
+```
+
+![image](/images/Exercise3.8.1.1d.png)
+
+Lastly, plot the data using `geom_count`
+
+```r
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_count()
+```
+![image](/images/Exercise3.8.1.3c.png)
+
+The `geom_count` will adjust the size of the plotted points based on the number of points that are all overplotted to the same location.  This is another way to convey overplotting, but depending on the distribution of the data, the now larger points can hide other points nearby.
+
+There are a few features to tweak with `geom_count` with the two internal calculated values `n = number of observations at position` and `prop = percent of points in the panal at that position`
+
+recall to reference an internal calculated value place ".." around the value.
+
+To demonstrate lets change the color of the points to react to the proportion of data points at that location.  Since I want the parameter to react to the data (or a value calculated from the data in this case), I will place the argument inside an aesthetic:
+
+```r
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_count(aes(color=..prop..))
+```
+![image](/images/Exercise3.8.1.4a.png)
+
