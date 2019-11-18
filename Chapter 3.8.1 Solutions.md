@@ -187,14 +187,71 @@ The `geom_count` will adjust the size of the plotted points based on the number 
 
 There are a few features to tweak with `geom_count` with the two internal calculated values `n = number of observations at position` and `prop = percent of points in the panal at that position`
 
-recall to reference an internal calculated value place ".." around the value.   `..n..` and `..prop..` in this case
+*Recall:* to reference an internal calculated value put ".." around the values:   `..n..` and `..prop..` in this case
 
 To demonstrate, lets change the color of the points to react to the proportion of data points at that location.  Since I want the parameter to react to the data (or a value calculated from the data in this case), I will place the argument `color = ..prop..`inside an aesthetic:
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
-  geom_count(aes(color=..prop..))
+  geom_count(aes(color = ..prop..))
 ```
 ![image](/images/Exercise3.8.1.4a.png)
 
-## Exercise 4: What’s the default position adjustment for geom_boxplot()? Create a visualisation of the mpg dataset that demonstrates it.
+## Exercise 4: What’s the default position adjustment for `geom_boxplot()`? Create a visualisation of the mpg dataset that demonstrates it.
+
+As per usual, utilize `?geom_boxplot` to access the documentation to find defaults for geoms:
+
+```geom_boxplot(mapping = NULL, data = NULL, stat = "boxplot",
+  **position = "dodge2"**, ..., outlier.colour = NULL,
+  outlier.color = NULL, outlier.fill = NULL, outlier.shape = 19,
+  outlier.size = 1.5, outlier.stroke = 0.5, outlier.alpha = NULL,
+  notch = FALSE, notchwidth = 0.5, varwidth = FALSE, na.rm = FALSE,
+  show.legend = NA, inherit.aes = TRUE)
+```
+
+the `position` parameter is set to `dodge2` which is a special setting just for boxplots.
+
+Since boxplots are useful for categorical comparisons.  Let's create a boxplot for each `class` of vehicle and plot the `hwy` mileage for that `class`
+
+```r
+ggplot(data = mpg, mapping = aes(x = class, y = hwy)) + 
+  geom_boxplot()
+```
+
+![image](/images/Exercise3.8.1.4b.png)
+
+Now lets split each boxplot into categories of the type of `drv` by assigning each `dyv` type to a color:
+
+```r
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) + 
+  geom_boxplot()
+```
+
+![image](/images/Exercise3.8.1.4c.png)
+
+Now just play with the `position` parameter to see what changes.  Note: some choices will not be valid like `position="fill"` or `position="stack"`
+
+```r
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) + 
+  geom_boxplot(position = "identity")
+```
+Here we see each `drv`-boxplot is placed vertically above the `class` categories, but they overlap each other.
+
+![image](/images/Exercise3.8.1.4d.png)
+
+```r
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) + 
+  geom_boxplot(position = "jitter")
+```
+Adds some randomness to how each boxplot is drawn.  Notice where some of the whiskers are in relation to the boxes.
+
+![image](/images/Exercise3.8.1.4e.png)
+
+```r
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, color = drv)) + 
+  geom_boxplot(position = "dodge")
+```
+
+I cannot detect any difference between `"dodge"` and `"dodge2"` for all the feaures in this plot, but we can see every `drv`-boxplot is spaced out so as to avoid or 'dodge' any other `drv`-boxplots nearby
+
+![image](/images/Exercise3.8.1.4f.png)
