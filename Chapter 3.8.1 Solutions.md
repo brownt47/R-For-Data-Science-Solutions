@@ -52,7 +52,7 @@ Here is a recreation with very small values of "jitter" = 0.05.  notice the poin
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
-  geom_jitter(height=.05,width=.05)
+  geom_jitter(height = .05, width = .05)
 ```
 ![image](/images/Exercise3.8.1.1e.png)
 
@@ -61,7 +61,7 @@ Here is one with possibly too much "jitter" = 5
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
-  geom_jitter(height=5,width=5)
+  geom_jitter(height = 5, width = 5)
 ```
 
 ![image](/images/Exercise3.8.1.1f.png)
@@ -90,14 +90,18 @@ We already addressed this partly in the previous exercise
 pulling directly from `?geom_jitter` we find the following:
 
 **width**	
+&nbsp
 *Amount of vertical and horizontal jitter. The jitter is added in both positive and negative directions, so the total spread is twice the value specified here.
+&nbsp
 If omitted, defaults to 40% of the resolution of the data: this means the jitter values will occupy 80% of the implied bins. Categorical data is aligned on the integers, so a width or height of 0.5 will spread the data so it's not possible to see the distinction between the categories.*
 
-**height**	
+**height**
+&nbsp
 *Amount of vertical and horizontal jitter. The jitter is added in both positive and negative directions, so the total spread is twice the value specified here.
+&nbsp
 If omitted, defaults to 40% of the resolution of the data: this means the jitter values will occupy 80% of the implied bins. Categorical data is aligned on the integers, so a width or height of 0.5 will spread the data so it's not possible to see the distinction between the categories.*
 
-you can choose to add noise in either direction: horizontally, vertically, or both.  You can even remove noise by setting the parameter to zero.
+You can choose to add noise in either direction: horizontally, vertically, or both.  You can even remove noise by setting the parameter to zero.
 
 Using the plot from ***Exercise 1***, try out a few values for the `width` parameter:  `0.1, 1, 5`   and we will turn off the vertical jittering by setting `height = 0`
 
