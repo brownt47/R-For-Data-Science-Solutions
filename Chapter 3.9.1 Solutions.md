@@ -129,3 +129,46 @@ ggplot(data = mpg) +
   labs(title = "Best Pie chart in the world", subtitle="title not meant to be taken seriously")
 ```
   ![image](/images/Exercise3.9.1.2a.png)
+
+
+## Exercise 3: What’s the difference between `coord_quickmap()` and `coord_map()`?
+
+Let's look in the documentation for `coord_quickmap()` and `coord_map()`.
+
+Turns out the documentation is the same for both.  Their difference largely deals with rendering the image of maps.  Since the surface of the Earth is a on a spherical 3D object, when it comes to presenting it as a 2D object, there is usually distortion.  Various maps have been created over the years to handle these distortions. 
+
+Some projections have longitude and latitude lines meeting at right angles, while others do not.  
+
+Some look like a flattened orange peel.
+
+Some have Greenland appearing three times the size of Australia.  
+
+Due to the nature of the latitude and longitude systems, the distance to travel from 90 degrees longitude to 95 degrees along the equator will be longer than walking between the same longitude lines in Northern Canada.
+
+`coord_map()` tries its best to present the maps and calculations with these distortions in mind.  It can make distance calculations difficult as the metric for distance between points changes along the path between the points.
+
+`coord_quickmap()` will instead use a rough approximation for the ratio between latitude and longitude in the effort to speed up calculations and yet preserve the nature of the projections.  For relatively small regions of the globe, this will serve well, especially near the equator.  Larger or more polar regions may want to sacrifice the speed of calculations with `coord_quickmap` and resort to `coord_map()` for better accuracy.
+
+Note: to run the examples in the documentation you will also need to install the `maps` and `mapproj` packages.
+
+```r
+nz <- map_data("nz")
+  # Prepare a map of NZ
+  nzmap <- ggplot(nz, aes(x = long, y = lat, group = group)) +
+    geom_polygon(fill = "white", colour = "black")
+```
+```r
+# Plot it in cartesian coordinates
+nzmap
+```
+ ![image](/images/Exercise3.9.1.3a.png)
+
+```r
+# With correct mercator projection              # With the aspect ratio approximation
+nzmap + coord_map()                             nzmap + coord_quickmap()
+```
+ ![image](/images/Exercise3.9.1.3b.png)      ![image](/images/Exercise3.9.1.3c.png)    
+
+
+
+A quick search for "map projections" should bring up some pages that explain the types and their advantages and disadvantages. 
