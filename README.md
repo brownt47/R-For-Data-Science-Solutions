@@ -19,3 +19,12 @@ Chapter 3 Solutions
 
 [Chapter 3.6.1 Solutions](Chapter 3.6.1 Solutions.md)  
 &nbsp;
+
+[Chapter 3.7.1 Solutions](Chapter 3.7.1 Solutions.md)  
+&nbsp;
+
+[Chapter 3.8.1 Solutions](Chapter 3.8.1 Solutions.md)  
+&nbsp;
+
+[Chapter 3.9.1 Solutions](Chapter 3.9.1 Solutions.md)  
+&nbsp;
