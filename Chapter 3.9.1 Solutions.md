@@ -153,3 +153,40 @@ Note: to run the examples in the documentation you will also need to install the
 
 A quick search for "map projections" should bring up some pages that explain the types of prjections for map making and their advantages and disadvantages. 
 
+## Exercise #4: What does the plot below tell you about the relationship between city and highway mpg? Why is `coord_fixed()` important? What does `geom_abline()` do?
+
+We can notice a possible positive correlation between the two variables `cty` and `hwy`
+
+stripping away the added statements, lets observe what the plots starting point (or points?  bad pun, I know)
+
+```r
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
+  geom_point()
+```
+
+Here we see the graph from early exercises and sections of this chapter
+  ![image](/images/Exercise3.9.1.4a.png)
+  
+Now, lets add the `geom_abline()`  - this will add a line where we can set parameters like slops and intercepts.  The default setting is a line with slope = 1 and y-intercept at the origin.  Alternatively, the line `y=x`.  This typically results in a 45 degree line.  Our line plotted below doesn't seem like a 45 degree line at first glance.  Upon closer inspection we do see the line passing thru (20,20) and (30, 30) as the line y=x should do.  It looks odd since the scales for the x-axis and y-axis are not equal.
+
+```r
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
+  geom_point() + 
+  geom_abline() 
+```
+![image](/images/Exercise3.9.1.4b.png)
+
+Adding `coord_fixed()` will adjust the scales for the x-axis and y-axis to make them equal or more "square".  Now we see our plotted line looks more like a 45-degree line we expect from `y=x`
+
+```r
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
+  geom_point() + 
+  geom_abline() +
+  coord_fixed()
+```
+
+
+![image](/images/Exercise3.9.1.4c.png)
+
+
+now we can better see the relationship between the variables with a fixed coordinate system.
