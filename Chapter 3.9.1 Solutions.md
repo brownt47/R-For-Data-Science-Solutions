@@ -167,11 +167,6 @@ nzmap
 # With correct mercator projection              # With the aspect ratio approximation
 nzmap + coord_map()                             nzmap + coord_quickmap()
 ```
- ![image](/images/Exercise3.9.1.3b.png) ![image](/images/Exercise3.9.1.3c.png)    
-
-
-:`# With correct mercator projection`      | : `nzmap + coord_quickmap()`
-:-------------------------:|:-------------------------:
-![image](/images/Exercise3.9.1.3b.png)   |  ![image](/images/Exercise3.9.1.3c.png)
+![image](/images/Exercise3.9.1.3b.png) ![image](/images/Exercise3.9.1.3c.png)    
 
 A quick search for "map projections" should bring up some pages that explain the types and their advantages and disadvantages. 
