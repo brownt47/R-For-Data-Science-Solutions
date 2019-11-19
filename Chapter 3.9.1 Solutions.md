@@ -167,10 +167,10 @@ nzmap
 # With correct mercator projection              # With the aspect ratio approximation
 nzmap + coord_map()                             nzmap + coord_quickmap()
 ```
- ![image](/images/Exercise3.9.1.3b.png)      ![image](/images/Exercise3.9.1.3c.png)    
+ ![image](/images/Exercise3.9.1.3b.png) ![image](/images/Exercise3.9.1.3c.png)    
 
-`# With correct mercator projection`      |   `# With the aspect ratio approximation`
-`# With correct mercator projection`      |  `nzmap + coord_quickmap()`
+
+:`# With correct mercator projection`      | : `nzmap + coord_quickmap()`
 :-------------------------:|:-------------------------:
 ![image](/images/Exercise3.9.1.3b.png)   |  ![image](/images/Exercise3.9.1.3c.png)
 
