@@ -151,22 +151,5 @@ Due to the nature of the latitude and longitude systems, the distance to travel 
 
 Note: to run the examples in the documentation you will also need to install the `maps` and `mapproj` packages.
 
-```r
-nz <- map_data("nz")
-  # Prepare a map of NZ
-  nzmap <- ggplot(nz, aes(x = long, y = lat, group = group)) +
-    geom_polygon(fill = "white", colour = "black")
-```
-```r
-# Plot it in cartesian coordinates
-nzmap
-```
- ![image](/images/Exercise3.9.1.3a.png)
+A quick search for "map projections" should bring up some pages that explain the types of prjections for map making and their advantages and disadvantages. 
 
-```r
-# With correct mercator projection              # With the aspect ratio approximation
-nzmap + coord_map()                             nzmap + coord_quickmap()
-```
-<img src="/images/Exercise3.9.1.3b.png" width="525"/> <img src="/images/Exercise3.9.1.3c.png" width="525"/> 
-
-A quick search for "map projections" should bring up some pages that explain the types of prjections and their advantages and disadvantages. 
