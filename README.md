@@ -9,22 +9,30 @@ I am creating a set of solutions that only rely on the techniques and content pr
 Chapter 3 Solutions
 
 [Chapter 3.2.4 Solutions](Chapter 3.2.4 Solutions.md)  
+
 &nbsp;
 
 [Chapter 3.3.1 Solutions](Chapter 3.3.1 Solutions.md)  
+
 &nbsp;
 
 [Chapter 3.5.1 Solutions](Chapter 3.5.1 Solutions.md)  
+
 &nbsp;
 
 [Chapter 3.6.1 Solutions](Chapter 3.6.1 Solutions.md)  
+
 &nbsp;
 
 [Chapter 3.7.1 Solutions](Chapter 3.7.1 Solutions.md)  
+
 &nbsp;
 
 [Chapter 3.8.1 Solutions](Chapter 3.8.1 Solutions.md)  
+
 &nbsp;
 
+
 [Chapter 3.9.1 Solutions](Chapter 3.9.1 Solutions.md)  
+
 &nbsp;
