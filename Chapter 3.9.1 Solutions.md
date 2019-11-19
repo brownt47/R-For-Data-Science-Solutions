@@ -145,7 +145,7 @@ Some have Greenland appearing three times the size of Australia.
 
 Due to the nature of the latitude and longitude systems, the distance to travel from 90 degrees longitude to 95 degrees along the equator will be longer than walking between the same longitude lines in Northern Canada.
 
-![image](/images/long.png)
+![image](/images/Long.png)
 
 `coord_map()` tries its best to present the maps and calculations with these distortions in mind.  It can make distance calculations difficult as the metric for distance between points changes along the path between the points.
 
