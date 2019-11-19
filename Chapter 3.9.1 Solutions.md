@@ -145,6 +145,8 @@ Some have Greenland appearing three times the size of Australia.
 
 Due to the nature of the latitude and longitude systems, the distance to travel from 90 degrees longitude to 95 degrees along the equator will be longer than walking between the same longitude lines in Northern Canada.
 
+![image](/images/long.png)
+
 `coord_map()` tries its best to present the maps and calculations with these distortions in mind.  It can make distance calculations difficult as the metric for distance between points changes along the path between the points.
 
 `coord_quickmap()` will instead use a rough approximation for the ratio between latitude and longitude in the effort to speed up calculations and yet preserve the nature of the projections.  For relatively small regions of the globe, this will serve well, especially near the equator.  Larger or more polar regions may want to sacrifice the speed of calculations with `coord_quickmap` and resort to `coord_map()` for better accuracy.
@@ -176,7 +178,7 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
 ```
 ![image](/images/Exercise3.9.1.4b.png)
 
-Adding `coord_fixed()` will adjust the scales for the x-axis and y-axis to make them equal or more "square".  Now we see our plotted line looks more like the 45-degree line we expect from `y=x`
+Adding `coord_fixed()` will adjust the scales for the x-axis and y-axis to make them equal or more "square".  Now we see our plotted line looks more like the 45-degree line we expect from `y=x`.  Note: the grid lines being formed by the tick marks on the axes look square, but that is because the tick marks are not equal on the x-axis and the y-axis.
 
 ```r
 ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
@@ -189,4 +191,6 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
 ![image](/images/Exercise3.9.1.4c.png)
 
 
-now we can better see the relationship between the variables with a fixed coordinate system.  An incease in `cty` results in nearly the same increase in `hwy`
+now we can better see the relationship between the variables with a fixed coordinate system.  An incease in `cty` results in nearly the same increase in `hwy`.  
+
+Presentation and visualization are key things in graphics to keep in mind to make sure you are highlighting features you want to draw attention to and not misrepresent them.
